@@ -21,986 +21,239 @@
     --card-bg: rgba(255,255,255,0.04);
     --border: rgba(255,255,255,0.1);
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--navy);
-    color: var(--white);
-    font-family: 'Noto Sans TC', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+  body { background: var(--navy); color: var(--white); font-family: 'Noto Sans TC', sans-serif; min-height: 100vh; overflow-x: hidden; }
 
   /* ── HERO ── */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    padding: 2rem;
-  }
-
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(26,58,107,0.6) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 30%, rgba(232,160,32,0.15) 0%, transparent 50%),
-      linear-gradient(160deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
-  }
-
-  .diamond-grid {
-    position: absolute; inset: 0;
-    background-image:
-      repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 0, transparent 50%),
-      repeating-linear-gradient(-45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 0, transparent 50%);
-    background-size: 60px 60px;
-  }
-
-  /* Baseball stitches decoration */
-  .stitch-line {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(232,160,32,0.3), transparent);
-  }
+  .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; padding: 2rem; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(26,58,107,0.6) 0%, transparent 60%), radial-gradient(ellipse at 80% 30%, rgba(232,160,32,0.15) 0%, transparent 50%), linear-gradient(160deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%); }
+  .diamond-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 0, transparent 50%); background-size: 60px 60px; }
+  .stitch-line { position: absolute; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, rgba(232,160,32,0.3), transparent); }
   .stitch-line:nth-child(1) { top: 20%; }
   .stitch-line:nth-child(2) { bottom: 20%; }
-
   .hero-content { position: relative; z-index: 2; }
-
-  .hero-year {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 20vw, 14rem);
-    line-height: 0.85;
-    color: rgba(255,255,255,0.04);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    letter-spacing: 0.05em;
-    pointer-events: none;
-  }
-
-  .org-badge {
-    display: inline-block;
-    background: rgba(232,160,32,0.15);
-    border: 1px solid rgba(232,160,32,0.4);
-    color: var(--gold);
-    padding: 0.4rem 1.2rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    border-radius: 2px;
-    animation: fadeDown 0.8s ease forwards;
-  }
-
-  .hero h1 {
-    font-family: 'Noto Serif TC', serif;
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-    animation: fadeDown 0.8s 0.1s ease both;
-  }
-
-  .hero-sub {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.2rem, 4vw, 2.2rem);
-    letter-spacing: 0.15em;
-    color: var(--accent);
-    margin-bottom: 2rem;
-    animation: fadeDown 0.8s 0.2s ease both;
-  }
-
-  .hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-    animation: fadeDown 0.8s 0.3s ease both;
-  }
-
-  .hero-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-
+  .hero-year { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 20vw, 14rem); line-height: 0.85; color: rgba(255,255,255,0.04); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; letter-spacing: 0.05em; pointer-events: none; }
+  .org-badge { display: inline-block; background: rgba(232,160,32,0.15); border: 1px solid rgba(232,160,32,0.4); color: var(--gold); padding: 0.4rem 1.2rem; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem; border-radius: 2px; animation: fadeDown 0.8s ease forwards; }
+  .hero h1 { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 0.5rem; animation: fadeDown 0.8s 0.1s ease both; }
+  .hero-sub { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.2rem, 4vw, 2.2rem); letter-spacing: 0.15em; color: var(--accent); margin-bottom: 2rem; animation: fadeDown 0.8s 0.2s ease both; }
+  .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; animation: fadeDown 0.8s 0.3s ease both; }
+  .hero-meta-item { display: flex; align-items: center; gap: 0.5rem; color: var(--muted); font-size: 0.85rem; }
   .hero-meta-item .icon { font-size: 1rem; color: var(--accent); }
+  .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; animation: fadeDown 0.8s 0.4s ease both; }
+  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: var(--muted); font-size: 0.75rem; letter-spacing: 0.1em; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; animation: bounce 2s infinite; }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent), transparent); }
 
-  .hero-cta {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    animation: fadeDown 0.8s 0.4s ease both;
-  }
-
-  .btn {
-    padding: 0.85rem 2.2rem;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--accent), var(--gold));
-    color: var(--navy);
-  }
+  /* ── BUTTONS ── */
+  .btn { padding: 0.85rem 2.2rem; font-family: 'Noto Sans TC', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.05em; border: none; cursor: pointer; border-radius: 3px; transition: all 0.2s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+  .btn-primary { background: linear-gradient(135deg, var(--accent), var(--gold)); color: var(--navy); }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,160,32,0.4); }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    border: 1px solid rgba(255,255,255,0.3);
-  }
+  .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
   .btn-outline:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--muted);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    animation: bounce 2s infinite;
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--accent), transparent);
-  }
+  .btn-danger { background: rgba(198,40,40,0.8); color: var(--white); }
+  .btn-danger:hover { background: #c62828; }
+  .btn-sm { padding: 0.45rem 1rem; font-size: 0.78rem; }
 
   /* ── NAV ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(10,22,40,0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-  }
-
-  .nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(10,22,40,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
   .nav-inner::-webkit-scrollbar { display: none; }
-
-  .nav-tab {
-    padding: 1rem 1.2rem;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
-    white-space: nowrap;
-    background: none;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-  }
-
+  .nav-tab { padding: 1rem 1.2rem; font-size: 0.82rem; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; background: none; border-left: none; border-right: none; border-top: none; }
   .nav-tab:hover { color: var(--white); }
   .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-  /* ── MAIN LAYOUT ── */
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-  }
-
+  /* ── LAYOUT ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
   .section { display: none; }
   .section.active { display: block; }
-
-  .section-header {
-    margin-bottom: 2.5rem;
-    border-left: 3px solid var(--accent);
-    padding-left: 1rem;
-  }
-
-  .section-header h2 {
-    font-family: 'Noto Serif TC', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-  }
-
-  .section-header p {
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
+  .section-header { margin-bottom: 2.5rem; border-left: 3px solid var(--accent); padding-left: 1rem; }
+  .section-header h2 { font-family: 'Noto Serif TC', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .section-header p { color: var(--muted); font-size: 0.85rem; }
 
   /* ── CARDS ── */
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: border-color 0.2s;
-  }
-
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: border-color 0.2s; }
   .card:hover { border-color: rgba(232,160,32,0.3); }
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .info-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-  }
-
-  .info-value {
-    font-size: 0.95rem;
-    color: var(--light);
-    line-height: 1.5;
-  }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+  .info-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; font-weight: 600; }
+  .info-value { font-size: 0.95rem; color: var(--light); line-height: 1.5; }
 
   /* ── TIMELINE ── */
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0.5rem;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--accent), transparent);
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 2rem;
-  }
-
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -1.65rem;
-    top: 0.35rem;
-    width: 10px;
-    height: 10px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent);
-  }
-
-  .timeline-date {
-    font-size: 0.72rem;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.3rem;
-    font-weight: 700;
-  }
-
-  .timeline-title {
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-    font-size: 0.95rem;
-  }
-
-  .timeline-desc {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--accent), transparent); }
+  .timeline-item { position: relative; margin-bottom: 2rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.65rem; top: 0.35rem; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+  .timeline-date { font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.3rem; font-weight: 700; }
+  .timeline-title { font-weight: 700; margin-bottom: 0.3rem; font-size: 0.95rem; }
+  .timeline-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 
   /* ── RULES ── */
-  .rules-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .rule-item {
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-
-  .rule-header {
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--card-bg);
-    transition: background 0.2s;
-    user-select: none;
-  }
-
+  .rules-accordion { display: flex; flex-direction: column; gap: 0.8rem; }
+  .rule-item { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .rule-header { padding: 1rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--card-bg); transition: background 0.2s; user-select: none; }
   .rule-header:hover { background: rgba(255,255,255,0.07); }
-
-  .rule-header h3 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .rule-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: rgba(232,160,32,0.2);
-    color: var(--accent);
-    font-size: 0.7rem;
-    font-weight: 700;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .rule-chevron {
-    transition: transform 0.3s;
-    color: var(--muted);
-    font-size: 0.8rem;
-  }
-
+  .rule-header h3 { font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.8rem; }
+  .rule-num { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: rgba(232,160,32,0.2); color: var(--accent); font-size: 0.7rem; font-weight: 700; border-radius: 50%; flex-shrink: 0; }
+  .rule-chevron { transition: transform 0.3s; color: var(--muted); font-size: 0.8rem; }
   .rule-item.open .rule-chevron { transform: rotate(180deg); }
-
-  .rule-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-  }
-
+  .rule-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
   .rule-item.open .rule-body { max-height: 600px; }
-
-  .rule-body-inner {
-    padding: 1rem 1.5rem 1.2rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.8;
-  }
-
-  .rule-body-inner ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .rule-body-inner li {
-    padding: 0.3rem 0;
-    padding-left: 1rem;
-    position: relative;
-  }
-
-  .rule-body-inner li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 0.65rem;
-    top: 0.42rem;
-  }
+  .rule-body-inner { padding: 1rem 1.5rem 1.2rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
+  .rule-body-inner ul { list-style: none; padding-left: 0; }
+  .rule-body-inner li { padding: 0.3rem 0; padding-left: 1rem; position: relative; }
+  .rule-body-inner li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.65rem; top: 0.42rem; }
 
   /* ── PRIZES ── */
-  .prizes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
+  .prizes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
   @media (max-width: 600px) { .prizes-grid { grid-template-columns: 1fr; } }
-
-  .prize-card {
-    border-radius: 10px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .prize-card.gold-prize {
-    background: linear-gradient(145deg, #3d2b00, #1a1200);
-    border: 1px solid rgba(245,200,66,0.4);
-  }
-
-  .prize-card.silver-prize {
-    background: linear-gradient(145deg, #1a2030, #0d1420);
-    border: 1px solid rgba(180,188,200,0.3);
-  }
-
-  .prize-card.bronze-prize {
-    background: linear-gradient(145deg, #2d1a08, #1a0f05);
-    border: 1px solid rgba(180,120,60,0.3);
-  }
-
-  .prize-rank {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-
+  .prize-card { border-radius: 10px; padding: 2rem 1.5rem; text-align: center; }
+  .prize-card.gold-prize { background: linear-gradient(145deg, #3d2b00, #1a1200); border: 1px solid rgba(245,200,66,0.4); }
+  .prize-card.silver-prize { background: linear-gradient(145deg, #1a2030, #0d1420); border: 1px solid rgba(180,188,200,0.3); }
+  .prize-card.bronze-prize { background: linear-gradient(145deg, #2d1a08, #1a0f05); border: 1px solid rgba(180,120,60,0.3); }
+  .prize-rank { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; line-height: 1; margin-bottom: 0.5rem; }
   .gold-prize .prize-rank { color: var(--gold); }
   .silver-prize .prize-rank { color: #c0c8d4; }
   .bronze-prize .prize-rank { color: #c87840; }
-
-  .prize-title {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .prize-amount {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-    color: var(--white);
-  }
-
+  .prize-title { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+  .prize-amount { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.05em; color: var(--white); }
   .prize-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; }
+  .individual-awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .award-item { display: flex; align-items: center; gap: 1rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; }
+  .award-icon { font-size: 1.5rem; width: 40px; text-align: center; flex-shrink: 0; }
 
-  .individual-awards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-
-  .award-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem 1.2rem;
-  }
-
-  .award-icon {
-    font-size: 1.5rem;
-    width: 40px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-
-  /* ── REGISTRATION FORM ── */
+  /* ── FORMS ── */
   .form-section { margin-bottom: 2rem; }
-  .form-section h3 {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .form-group label {
-    font-size: 0.78rem;
-    color: var(--muted);
-    font-weight: 500;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    color: var(--white);
-    padding: 0.7rem 0.9rem;
-    border-radius: 5px;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 0.88rem;
-    transition: border-color 0.2s;
-    outline: none;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--accent);
-    background: rgba(255,255,255,0.07);
-  }
-
+  .form-section h3 { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+  .form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--white); padding: 0.7rem 0.9rem; border-radius: 5px; font-family: 'Noto Sans TC', sans-serif; font-size: 0.88rem; transition: border-color 0.2s; outline: none; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); background: rgba(255,255,255,0.07); }
   .form-group select option { background: var(--deep); }
+  .form-notice { background: rgba(26,58,107,0.3); border: 1px solid rgba(26,58,107,0.6); border-radius: 6px; padding: 1rem 1.2rem; font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .form-notice strong { color: var(--accent); }
+  .submit-area { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 
-  /* Players table */
-  .players-table-wrapper {
-    overflow-x: auto;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-
-  .players-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px;
-  }
-
-  .players-table th {
-    background: rgba(255,255,255,0.05);
-    padding: 0.7rem 0.8rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    white-space: nowrap;
-  }
-
-  .players-table td {
-    padding: 0.5rem 0.6rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-
+  /* ── PLAYERS TABLE ── */
+  .players-table-wrapper { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 1rem; }
+  .players-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+  .players-table th { background: rgba(255,255,255,0.05); padding: 0.7rem 0.8rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .players-table td { padding: 0.5rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .players-table tr:last-child td { border-bottom: none; }
-
-  .players-table input, .players-table select {
-    background: transparent;
-    border: 1px solid transparent;
-    color: var(--white);
-    padding: 0.35rem 0.5rem;
-    border-radius: 3px;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 0.82rem;
-    width: 100%;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .players-table input:focus, .players-table select:focus {
-    border-color: var(--accent);
-    background: rgba(255,255,255,0.05);
-  }
-
+  .players-table input, .players-table select { background: transparent; border: 1px solid transparent; color: var(--white); padding: 0.35rem 0.5rem; border-radius: 3px; font-family: 'Noto Sans TC', sans-serif; font-size: 0.82rem; width: 100%; outline: none; transition: border-color 0.2s; }
+  .players-table input:focus, .players-table select:focus { border-color: var(--accent); background: rgba(255,255,255,0.05); }
   .players-table select option { background: var(--deep); }
-
-  .players-table .row-num {
-    color: var(--muted);
-    font-size: 0.75rem;
-    text-align: center;
-    width: 30px;
-  }
-
+  .players-table .row-num { color: var(--muted); font-size: 0.75rem; text-align: center; width: 30px; }
   .checkbox-cell { text-align: center; }
-  .checkbox-cell input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--accent);
-  }
-
-  .add-player-btn {
-    background: rgba(232,160,32,0.1);
-    border: 1px dashed rgba(232,160,32,0.4);
-    color: var(--accent);
-    width: 100%;
-    padding: 0.7rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 0.85rem;
-    transition: all 0.2s;
-    margin-bottom: 1.5rem;
-  }
-
+  .checkbox-cell input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); }
+  .add-player-btn { background: rgba(232,160,32,0.1); border: 1px dashed rgba(232,160,32,0.4); color: var(--accent); width: 100%; padding: 0.7rem; border-radius: 5px; cursor: pointer; font-family: 'Noto Sans TC', sans-serif; font-size: 0.85rem; transition: all 0.2s; margin-bottom: 1.5rem; }
   .add-player-btn:hover { background: rgba(232,160,32,0.18); }
-
-  .counter-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-  }
-
+  .counter-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
   .counter-badge span { color: var(--accent); font-weight: 700; }
 
-  .form-notice {
-    background: rgba(26,58,107,0.3);
-    border: 1px solid rgba(26,58,107,0.6);
-    border-radius: 6px;
-    padding: 1rem 1.2rem;
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  .form-notice strong { color: var(--accent); }
-
-  .submit-area {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
-
-  /* ── RESULTS ── */
-  .results-banner {
-    background: linear-gradient(135deg, rgba(26,94,32,0.3), rgba(46,125,50,0.1));
-    border: 1px solid rgba(46,125,50,0.4);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .results-icon { font-size: 2rem; }
-
-  .bracket-placeholder {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: var(--card-bg);
-    border: 1px dashed rgba(255,255,255,0.15);
-    border-radius: 10px;
-    color: var(--muted);
-    margin-bottom: 2rem;
-  }
-
-  .bracket-placeholder .big-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-    opacity: 0.4;
-  }
-
-  .standings-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-  }
-
-  .standings-table th {
-    background: rgba(255,255,255,0.05);
-    padding: 0.8rem 1rem;
-    text-align: left;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .standings-table td {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    color: var(--light);
-  }
-
+  /* ── STANDINGS ── */
+  .standings-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .standings-table th { background: rgba(255,255,255,0.05); padding: 0.8rem 1rem; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); border-bottom: 1px solid var(--border); }
+  .standings-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--light); }
   .standings-table tr:hover td { background: rgba(255,255,255,0.03); }
-
-  .rank-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    font-size: 0.8rem;
-    font-weight: 700;
-  }
-
+  .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; font-size: 0.8rem; font-weight: 700; }
   .rank-1 { background: linear-gradient(135deg, #f5c842, #e8a020); color: #1a0f00; }
   .rank-2 { background: linear-gradient(135deg, #c0c8d4, #8a96a0); color: #1a1a1a; }
   .rank-3 { background: linear-gradient(135deg, #c87840, #8a4820); color: #fff; }
   .rank-other { background: rgba(255,255,255,0.1); color: var(--muted); }
-
-  .status-pill {
-    display: inline-block;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 600;
-  }
-
+  .status-pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
   .pill-pending { background: rgba(255,170,0,0.15); color: #ffaa00; border: 1px solid rgba(255,170,0,0.3); }
   .pill-live { background: rgba(76,175,80,0.15); color: #4caf50; border: 1px solid rgba(76,175,80,0.3); }
   .pill-done { background: rgba(255,255,255,0.08); color: var(--muted); border: 1px solid var(--border); }
 
   /* ── ADMIN ── */
-  .admin-notice {
-    background: rgba(198,40,40,0.1);
-    border: 1px solid rgba(198,40,40,0.3);
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    font-size: 0.85rem;
-    color: #ef9a9a;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .admin-login {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
+  .admin-notice { background: rgba(198,40,40,0.1); border: 1px solid rgba(198,40,40,0.3); border-radius: 8px; padding: 1rem 1.5rem; font-size: 0.85rem; color: #ef9a9a; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.8rem; }
+  .admin-login { max-width: 400px; margin: 0 auto; }
   .admin-panel { display: none; }
   .admin-panel.active { display: block; }
+  .result-entry-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-bottom: 1.5rem; }
+  .vs-separator { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--accent); text-align: center; }
+  .score-input-big { font-size: 2rem !important; text-align: center !important; font-family: 'Bebas Neue', sans-serif !important; }
 
-  .result-entry-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
+  /* ── ADMIN TABS ── */
+  .admin-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  .admin-tab-btn { padding: 0.7rem 1.2rem; font-size: 0.85rem; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; background: none; border-top: none; border-left: none; border-right: none; transition: all 0.2s; position: relative; bottom: -1px; font-family: 'Noto Sans TC', sans-serif; }
+  .admin-tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .admin-tab-btn:hover:not(.active) { color: var(--white); }
+  .admin-tab-panel { display: none; }
+  .admin-tab-panel.active { display: block; }
 
-  .vs-separator {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    color: var(--accent);
-    text-align: center;
-  }
-
-  .score-input-big {
-    font-size: 2rem !important;
-    text-align: center !important;
-    font-family: 'Bebas Neue', sans-serif !important;
-  }
-
-  .announcements-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .announcement-item {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
+  /* ── ANNOUNCEMENTS ── */
+  .announcements-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+  .announcement-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
   .announcement-meta { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.3rem; }
   .announcement-text { font-size: 0.9rem; color: var(--light); }
-
-  .announcement-type {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
+  .announcement-type { font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; flex-shrink: 0; }
   .type-result { background: rgba(76,175,80,0.2); color: #81c784; }
   .type-info { background: rgba(33,150,243,0.2); color: #64b5f6; }
   .type-alert { background: rgba(255,152,0,0.15); color: #ffb74d; }
 
+  /* ── SCORE CARDS ── */
+  .score-card { display:grid; grid-template-columns:1fr auto 1fr; gap:1rem; align-items:center; margin-bottom:1rem; padding:1.2rem 1.5rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; }
+
+  /* ── REGISTRATIONS TABLE ── */
+  .reg-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .reg-table th { background: rgba(255,255,255,0.05); padding: 0.7rem 0.8rem; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .reg-table td { padding: 0.65rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--light); vertical-align: top; }
+  .reg-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  /* ── USER MANAGE ── */
+  .user-row { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--border); }
+  .user-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+  .user-role-badge { font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .role-superadmin { background: rgba(245,200,66,0.2); color: var(--gold); border: 1px solid rgba(245,200,66,0.3); }
+  .role-admin { background: rgba(33,150,243,0.2); color: #64b5f6; border: 1px solid rgba(33,150,243,0.3); }
+
   /* ── HOTEL ── */
-  .hotel-tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0;
-  }
-
-  .hotel-tab {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.85rem;
-    cursor: pointer;
-    color: var(--muted);
-    border-bottom: 2px solid transparent;
-    background: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    transition: all 0.2s;
-    position: relative;
-    bottom: -1px;
-  }
-
+  .hotel-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0; }
+  .hotel-tab { padding: 0.7rem 1.2rem; font-size: 0.85rem; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; background: none; border-top: none; border-left: none; border-right: none; transition: all 0.2s; position: relative; bottom: -1px; }
   .hotel-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
   .hotel-tab:hover:not(.active) { color: var(--white); }
-
   .hotel-panel { display: none; }
   .hotel-panel.active { display: block; }
-
-  .hotel-room-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .hotel-room-table th {
-    background: rgba(255,255,255,0.05);
-    padding: 0.7rem 0.8rem;
-    text-align: left;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hotel-room-table td {
-    padding: 0.65rem 0.8rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    color: var(--light);
-  }
-
+  .hotel-room-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .hotel-room-table th { background: rgba(255,255,255,0.05); padding: 0.7rem 0.8rem; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); border-bottom: 1px solid var(--border); }
+  .hotel-room-table td { padding: 0.65rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--light); }
   .hotel-room-table tr:hover td { background: rgba(255,255,255,0.03); }
-
-  .hotel-room-table input {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid var(--border);
-    color: var(--white);
-    padding: 0.35rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.82rem;
-    width: 70px;
-    text-align: center;
-    outline: none;
-  }
-
+  .hotel-room-table input { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 0.35rem 0.6rem; border-radius: 4px; font-size: 0.82rem; width: 70px; text-align: center; outline: none; }
   .hotel-room-table input:focus { border-color: var(--accent); }
 
+  /* ── MODAL ── */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .modal-overlay.hidden { display: none; }
+  .modal { background: #0d1f3c; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; }
+  .modal h3 { font-family: 'Noto Serif TC', serif; margin-bottom: 1.5rem; font-size: 1.2rem; }
+  .modal-actions { display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: flex-end; }
+
+  /* ── LOADING ── */
+  .loading-spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── GAS CONFIG BANNER ── */
+  .config-banner { background: rgba(198,40,40,0.15); border: 1px solid rgba(198,40,40,0.4); border-radius: 8px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; font-size: 0.85rem; line-height: 1.7; }
+  .config-banner.ok { background: rgba(46,125,50,0.15); border-color: rgba(46,125,50,0.4); }
+  .config-banner code { background: rgba(0,0,0,0.3); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.82rem; color: var(--gold); }
+
   /* ── TOAST ── */
-  .toast-container {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .toast {
-    background: #1a3a6b;
-    border: 1px solid rgba(232,160,32,0.4);
-    color: var(--white);
-    padding: 0.9rem 1.5rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    animation: slideUp 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
+  .toast-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 9999; display: flex; flex-direction: column; gap: 0.8rem; }
+  .toast { background: #1a3a6b; border: 1px solid rgba(232,160,32,0.4); color: var(--white); padding: 0.9rem 1.5rem; border-radius: 6px; font-size: 0.85rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); animation: slideUp 0.3s ease; display: flex; align-items: center; gap: 0.6rem; }
   .toast.success { border-color: rgba(76,175,80,0.5); }
   .toast.error { border-color: rgba(198,40,40,0.5); background: #2d1010; }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-15px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
-
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── DIVIDER ── */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
-    margin: 2rem 0;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.78rem;
-    line-height: 1.8;
-    margin-top: 3rem;
-  }
-
-  footer a { color: var(--accent); text-decoration: none; }
-
+  /* ── MISC ── */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 2rem 0; }
   .highlight { color: var(--accent); font-weight: 600; }
-
-  @media (max-width: 768px) {
-    main { padding: 2rem 1rem; }
-    .prizes-grid { grid-template-columns: 1fr; }
-    .result-entry-grid { grid-template-columns: 1fr; }
-  }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.78rem; line-height: 1.8; margin-top: 3rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+  .bracket-placeholder { text-align: center; padding: 4rem 2rem; background: var(--card-bg); border: 1px dashed rgba(255,255,255,0.15); border-radius: 10px; color: var(--muted); margin-bottom: 2rem; }
+  .bracket-placeholder .big-icon { font-size: 3rem; margin-bottom: 1rem; display: block; opacity: 0.4; }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 768px) { main { padding: 2rem 1rem; } .prizes-grid { grid-template-columns: 1fr; } .result-entry-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -1012,42 +265,23 @@
   <div class="stitch-line"></div>
   <div class="stitch-line"></div>
   <div class="hero-year">114</div>
-
   <div class="hero-content">
     <div class="org-badge">中華民國自來水協會</div>
     <h1>114年慢速壘球<br>錦標賽</h1>
     <div class="hero-sub">SLOW PITCH SOFTBALL CHAMPIONSHIP</div>
-
     <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="icon">📅</span>
-        <span>114年09月19日（星期五）</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="icon">📍</span>
-        <span>台南市文中A、B棒壘球場</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="icon">⚾</span>
-        <span>最多 12 隊參賽</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="icon">📋</span>
-        <span>報名截止：114年07月31日</span>
-      </div>
+      <div class="hero-meta-item"><span class="icon">📅</span><span>114年09月19日（星期五）</span></div>
+      <div class="hero-meta-item"><span class="icon">📍</span><span>台南市文中A、B棒壘球場</span></div>
+      <div class="hero-meta-item"><span class="icon">⚾</span><span>最多 12 隊參賽</span></div>
+      <div class="hero-meta-item"><span class="icon">📋</span><span>報名截止：114年07月31日</span></div>
     </div>
-
     <div class="hero-cta">
       <button class="btn btn-primary" onclick="switchSection('register')">⚾ 立即報名</button>
       <button class="btn btn-outline" onclick="switchSection('info')">📋 賽事規章</button>
       <button class="btn btn-outline" onclick="switchSection('results')">🏆 賽事結果</button>
     </div>
   </div>
-
-  <div class="scroll-hint">
-    <span>向下瀏覽</span>
-    <div class="scroll-line"></div>
-  </div>
+  <div class="scroll-hint"><span>向下瀏覽</span><div class="scroll-line"></div></div>
 </section>
 
 <!-- NAV -->
@@ -1065,591 +299,294 @@
 
 <main>
 
-  <!-- ── INFO ── -->
-  <section class="section active" id="section-info">
-    <div class="section-header">
-      <h2>賽事資訊</h2>
-      <p>114年度慢速壘球錦標賽完整活動計畫</p>
+<!-- ── INFO ── -->
+<section class="section active" id="section-info">
+  <div class="section-header"><h2>賽事資訊</h2><p>114年度慢速壘球錦標賽完整活動計畫</p></div>
+  <div class="card-grid">
+    <div class="card"><div class="info-label">主辦單位</div><div class="info-value">中華民國自來水協會</div></div>
+    <div class="card"><div class="info-label">承辦單位</div><div class="info-value">弓銓企業股份有限公司</div></div>
+    <div class="card"><div class="info-label">比賽日期</div><div class="info-value">114年09月19日（星期五）</div></div>
+    <div class="card"><div class="info-label">比賽地點</div><div class="info-value">台南市文中A、B棒壘球場<br><small style="color:var(--muted)">708台南市安平區府平路121號</small></div></div>
+    <div class="card"><div class="info-label">聯絡人</div><div class="info-value">劉羿君（弓銓企業）<br><a href="tel:0650502077593" style="color:var(--accent)">(06)5050207#593</a><br><a href="mailto:a11041@ems.com.tw" style="color:var(--accent)">a11041@ems.com.tw</a></div></div>
+    <div class="card"><div class="info-label">參加對象</div><div class="info-value">本協會各分區會員、團體會員廠商（組隊時應以協會會員優先參加）</div></div>
+  </div>
+  <div class="section-header" style="margin-top:2.5rem"><h2>重要時程</h2></div>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-date">即日起 ～ 114.07.31（四）17:00</div><div class="timeline-title">📋 報名期間</div><div class="timeline-desc">以電子郵件方式報名，逾期不受理。每隊至多24人（含領隊及教練），最多收12隊，額滿為止。</div></div>
+    <div class="timeline-item"><div class="timeline-date">114.08.20（三）14:00</div><div class="timeline-title">🤝 領隊會議</div><div class="timeline-desc">於弓銓企業股份有限公司會議室舉行（可視訊與會）。當日進行資格審查及賽程抽籤。未派員與會者，由承辦單位代為抽籤。</div></div>
+    <div class="timeline-item"><div class="timeline-date">114.09.07 前後（預計）</div><div class="timeline-title">📧 電子秩序冊發送</div><div class="timeline-desc">預計於賽前兩週提供電子秩序冊至各參賽隊伍。</div></div>
+    <div class="timeline-item"><div class="timeline-date">114.09.19（五）10:00</div><div class="timeline-title">🎊 開幕典禮</div><div class="timeline-desc">各隊請派10名以上隊員參加開幕典禮。比賽於台南市文中A、B棒壘球場舉行。</div></div>
+    <div class="timeline-item"><div class="timeline-date">114.09.19（五）冠亞軍賽結束後</div><div class="timeline-title">🏆 閉幕及頒獎典禮</div><div class="timeline-desc">冠亞軍賽結束後隨即舉行頒獎典禮。</div></div>
+  </div>
+  <div class="divider"></div>
+  <div class="card" style="background:rgba(26,58,107,0.2);border-color:rgba(26,58,107,0.5)">
+    <div class="info-label" style="margin-bottom:0.8rem">📌 報名注意事項</div>
+    <ul style="list-style:none;font-size:0.88rem;color:var(--muted);line-height:2">
+      <li>▸ 報名隊伍以單一分區、團體會員組隊為原則，人數不足可單位間籌組聯隊</li>
+      <li>▸ 每隊報名人數<strong style="color:var(--white)">至多24人</strong>（含領隊及教練），不得重複報名</li>
+      <li>▸ 請將電子版報名表寄送至 <a href="mailto:a11041@ems.com.tw" style="color:var(--accent)">a11041@ems.com.tw</a> 並電話確認</li>
+      <li>▸ 參賽隊伍依報名順序受理至額滿為止，<strong style="color:var(--accent)">以12隊為限</strong></li>
+      <li>▸ 為響應綠色環保政策，統一以電子郵件電子檔受理報名</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── RULES ── -->
+<section class="section" id="section-rules">
+  <div class="section-header"><h2>比賽規則</h2><p>採用中華民國慢速壘球協會 2022~2025 年慢速壘球規則</p></div>
+  <div class="rules-accordion">
+    <div class="rule-item open" onclick="toggleRule(this)">
+      <div class="rule-header"><h3><span class="rule-num">1</span> 比賽方式與賽制</h3><span class="rule-chevron">▼</span></div>
+      <div class="rule-body"><div class="rule-body-inner"><ul>
+        <li>預賽採<strong>分組循環制</strong>，勝隊得2分、和局各得1分、敗隊得0分</li>
+        <li>積分相同時，依序以：相互勝負關係→淨得分→總得分→總失分→抽籤決定</li>
+        <li>使用慢壘用<strong>木棒</strong>打擊；比賽用球由承辦單位提供</li>
+        <li>預賽前四局採二局攻守交換（進攻方單一半局達10分時強迫換局），五局後恢復單局攻守交換</li>
+        <li>複賽開始採單局攻守交換</li>
+      </ul></div></div>
     </div>
-
-    <div class="card-grid">
-      <div class="card">
-        <div class="info-label">主辦單位</div>
-        <div class="info-value">中華民國自來水協會</div>
-      </div>
-      <div class="card">
-        <div class="info-label">承辦單位</div>
-        <div class="info-value">弓銓企業股份有限公司</div>
-      </div>
-      <div class="card">
-        <div class="info-label">比賽日期</div>
-        <div class="info-value">114年09月19日（星期五）</div>
-      </div>
-      <div class="card">
-        <div class="info-label">比賽地點</div>
-        <div class="info-value">台南市文中A、B棒壘球場<br><small style="color:var(--muted)">708台南市安平區府平路121號</small></div>
-      </div>
-      <div class="card">
-        <div class="info-label">聯絡人</div>
-        <div class="info-value">劉羿君（弓銓企業）<br>
-          <a href="tel:0650502077593" style="color:var(--accent)">(06)5050207#593</a><br>
-          <a href="mailto:a11041@ems.com.tw" style="color:var(--accent)">a11041@ems.com.tw</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="info-label">參加對象</div>
-        <div class="info-value">本協會各分區會員、團體會員廠商（組隊時應以協會會員優先參加）</div>
-      </div>
+    <div class="rule-item" onclick="toggleRule(this)">
+      <div class="rule-header"><h3><span class="rule-num">2</span> 比賽時間與得分規定</h3><span class="rule-chevron">▼</span></div>
+      <div class="rule-body"><div class="rule-body-inner"><ul>
+        <li>比賽<strong>7局</strong>，以<strong>60分鐘</strong>為限，採一好一壞制</li>
+        <li>提前結束條件：4局差10分、5局差7分</li>
+        <li>計時器55分鐘響起後不另開新局；若上半局打完，下半局後攻得分較高或三出局前超過對方，則獲勝</li>
+        <li>預賽採有和局制；複賽開始若平局則採<strong>突破僵局制</strong></li>
+        <li>冠亞軍比賽<strong>不限時間</strong></li>
+      </ul></div></div>
     </div>
-
-    <div class="section-header" style="margin-top:2.5rem">
-      <h2>重要時程</h2>
+    <div class="rule-item" onclick="toggleRule(this)">
+      <div class="rule-header"><h3><span class="rule-num">3</span> 投手規定</h3><span class="rule-chevron">▼</span></div>
+      <div class="rule-body"><div class="rule-body-inner"><ul>
+        <li>投手投球高度限<strong>頂點1.8公尺以上、3.65公尺以下</strong></li>
+        <li>先發投球局數須滿3局，始得列入勝投王成績計算</li>
+      </ul></div></div>
     </div>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">即日起 ～ 114.07.31（四）17:00</div>
-        <div class="timeline-title">📋 報名期間</div>
-        <div class="timeline-desc">以電子郵件方式報名，逾期不受理。每隊至多24人（含領隊及教練），最多收12隊，額滿為止。</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">114.08.20（三）14:00</div>
-        <div class="timeline-title">🤝 領隊會議</div>
-        <div class="timeline-desc">於弓銓企業股份有限公司會議室舉行（可視訊與會）。當日進行資格審查及賽程抽籤。未派員與會者，由承辦單位代為抽籤。</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">114.09.07 前後（預計）</div>
-        <div class="timeline-title">📧 電子秩序冊發送</div>
-        <div class="timeline-desc">預計於賽前兩週提供電子秩序冊至各參賽隊伍。</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">114.09.19（五）10:00</div>
-        <div class="timeline-title">🎊 開幕典禮</div>
-        <div class="timeline-desc">各隊請派10名以上隊員參加開幕典禮。比賽於台南市文中A、B棒壘球場舉行。</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">114.09.19（五）冠亞軍賽結束後</div>
-        <div class="timeline-title">🏆 閉幕及頒獎典禮</div>
-        <div class="timeline-desc">冠亞軍賽結束後隨即舉行頒獎典禮。</div>
-      </div>
+    <div class="rule-item" onclick="toggleRule(this)">
+      <div class="rule-header"><h3><span class="rule-num">4</span> 女生優惠條款</h3><span class="rule-chevron">▼</span></div>
+      <div class="rule-body"><div class="rule-body-inner"><ul>
+        <li>女生上場打擊擊出<strong>內野滾地球算一壘安打</strong>，其他壘上球員為負擔狀態，女生安全上一壘</li>
+        <li><strong>嚴禁短打</strong>，違者判出局</li>
+      </ul></div></div>
     </div>
-
-    <div class="divider"></div>
-
-    <div class="card" style="background:rgba(26,58,107,0.2);border-color:rgba(26,58,107,0.5)">
-      <div class="info-label" style="margin-bottom:0.8rem">📌 報名注意事項</div>
-      <ul style="list-style:none;font-size:0.88rem;color:var(--muted);line-height:2">
-        <li>▸ 報名隊伍以單一分區、團體會員組隊為原則，人數不足可單位間籌組聯隊</li>
-        <li>▸ 每隊報名人數<strong style="color:var(--white)">至多24人</strong>（含領隊及教練），不得重複報名</li>
-        <li>▸ 請將電子版報名表寄送至 <a href="mailto:a11041@ems.com.tw" style="color:var(--accent)">a11041@ems.com.tw</a> 並電話確認</li>
-        <li>▸ 參賽隊伍依報名順序受理至額滿為止，<strong style="color:var(--accent)">以12隊為限</strong></li>
-        <li>▸ 為響應綠色環保政策，統一以電子郵件電子檔受理報名</li>
-      </ul>
+    <div class="rule-item" onclick="toggleRule(this)">
+      <div class="rule-header"><h3><span class="rule-num">5</span> 本壘攻防與安全規定</h3><span class="rule-chevron">▼</span></div>
+      <div class="rule-body"><div class="rule-body-inner"><ul>
+        <li>守方以<strong>本壘板</strong>為主，攻方以<strong>本壘板後方之好球板</strong>為主</li>
+        <li>本壘禁止滑壘</li>
+        <li>若本壘攻防發生肢體衝突，以主審判決為主，不得異議</li>
+        <li>禁止穿刀片釘鞋，僅可穿圓鋁釘</li>
+      </ul></div></div>
     </div>
-  </section>
-
-  <!-- ── RULES ── -->
-  <section class="section" id="section-rules">
-    <div class="section-header">
-      <h2>比賽規則</h2>
-      <p>採用中華民國慢速壘球協會 2022~2025 年慢速壘球規則</p>
+    <div class="rule-item" onclick="toggleRule(this)">
+      <div class="rule-header"><h3><span class="rule-num">6</span> 申訴與資格規定</h3><span class="rule-chevron">▼</span></div>
+      <div class="rule-body"><div class="rule-body-inner"><ul>
+        <li>申訴須由<strong>隊長以上</strong>提出，其他人員提出概不受理</li>
+        <li>球隊一經報名，不得罷賽或無故棄權</li>
+        <li>冒名或頂替（跨隊及未報名者出賽）將沒收該場成績</li>
+        <li>隊員出賽以<strong>登錄第一場</strong>為準</li>
+      </ul></div></div>
     </div>
-
-    <div class="rules-accordion">
-      <div class="rule-item open" onclick="toggleRule(this)">
-        <div class="rule-header">
-          <h3><span class="rule-num">1</span> 比賽方式與賽制</h3>
-          <span class="rule-chevron">▼</span>
-        </div>
-        <div class="rule-body">
-          <div class="rule-body-inner">
-            <ul>
-              <li>預賽採<strong>分組循環制</strong>，勝隊得2分、和局各得1分、敗隊得0分</li>
-              <li>積分相同時，依序以：相互勝負關係→淨得分→總得分→總失分→抽籤決定</li>
-              <li>使用慢壘用<strong>木棒</strong>打擊；比賽用球由承辦單位提供</li>
-              <li>預賽前四局採二局攻守交換（進攻方單一半局達10分時強迫換局），五局後恢復單局攻守交換</li>
-              <li>複賽開始採單局攻守交換</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule-item" onclick="toggleRule(this)">
-        <div class="rule-header">
-          <h3><span class="rule-num">2</span> 比賽時間與得分規定</h3>
-          <span class="rule-chevron">▼</span>
-        </div>
-        <div class="rule-body">
-          <div class="rule-body-inner">
-            <ul>
-              <li>比賽<strong>7局</strong>，以<strong>60分鐘</strong>為限，採一好一壞制</li>
-              <li>提前結束條件：4局差10分、5局差7分</li>
-              <li>計時器55分鐘響起後不另開新局；若上半局打完，下半局後攻得分較高或三出局前超過對方，則獲勝</li>
-              <li>預賽採有和局制；複賽開始若平局則採<strong>突破僵局制</strong>（最後一棒在一壘、最後2棒在三壘、1人出局，由第一棒開始攻擊）</li>
-              <li>冠亞軍比賽<strong>不限時間</strong></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule-item" onclick="toggleRule(this)">
-        <div class="rule-header">
-          <h3><span class="rule-num">3</span> 投手規定</h3>
-          <span class="rule-chevron">▼</span>
-        </div>
-        <div class="rule-body">
-          <div class="rule-body-inner">
-            <ul>
-              <li>投手投球高度限<strong>頂點1.8公尺以上、3.65公尺以下</strong></li>
-              <li>先發投球局數須滿3局，始得列入勝投王成績計算</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule-item" onclick="toggleRule(this)">
-        <div class="rule-header">
-          <h3><span class="rule-num">4</span> 女生優惠條款</h3>
-          <span class="rule-chevron">▼</span>
-        </div>
-        <div class="rule-body">
-          <div class="rule-body-inner">
-            <ul>
-              <li>女生上場打擊擊出<strong>內野滾地球算一壘安打</strong>，其他壘上球員為負擔狀態，女生安全上一壘</li>
-              <li><strong>嚴禁短打</strong>，違者判出局</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule-item" onclick="toggleRule(this)">
-        <div class="rule-header">
-          <h3><span class="rule-num">5</span> 本壘攻防與安全規定</h3>
-          <span class="rule-chevron">▼</span>
-        </div>
-        <div class="rule-body">
-          <div class="rule-body-inner">
-            <ul>
-              <li>守方以<strong>本壘板</strong>為主，攻方以<strong>本壘板後方之好球板</strong>為主</li>
-              <li>本壘禁止滑壘</li>
-              <li>若本壘攻防發生肢體衝突，以主審判決為主，不得異議</li>
-              <li>禁止穿刀片釘鞋，僅可穿圓鋁釘</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule-item" onclick="toggleRule(this)">
-        <div class="rule-header">
-          <h3><span class="rule-num">6</span> 申訴與資格規定</h3>
-          <span class="rule-chevron">▼</span>
-        </div>
-        <div class="rule-body">
-          <div class="rule-body-inner">
-            <ul>
-              <li>申訴須由<strong>隊長以上</strong>提出，其他人員提出概不受理</li>
-              <li>球隊一經報名，不得罷賽或無故棄權</li>
-              <li>冒名或頂替（跨隊及未報名者出賽）將沒收該場成績</li>
-              <li>隊員出賽以<strong>登錄第一場</strong>為準</li>
-              <li>比賽前後兩隊應集合，並清潔休息區</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="rule-item" onclick="toggleRule(this)">
-        <div class="rule-header">
-          <h3><span class="rule-num">7</span> 保險事項</h3>
-          <span class="rule-chevron">▼</span>
-        </div>
-        <div class="rule-body">
-          <div class="rule-body-inner">
-            <ul>
-              <li>本次賽事投保<strong>公共意外責任險</strong></li>
-              <li>承保範圍：因場地疏失或大會提供器材所造成之意外受傷害理賠</li>
-              <li>相關細節依投保公司之保險契約為準</li>
-              <li>參賽選手請<strong>自行加保個人人身意外保險</strong></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="rule-item" onclick="toggleRule(this)">
+      <div class="rule-header"><h3><span class="rule-num">7</span> 保險事項</h3><span class="rule-chevron">▼</span></div>
+      <div class="rule-body"><div class="rule-body-inner"><ul>
+        <li>本次賽事投保<strong>公共意外責任險</strong></li>
+        <li>承保範圍：因場地疏失或大會提供器材所造成之意外受傷害理賠</li>
+        <li>參賽選手請<strong>自行加保個人人身意外保險</strong></li>
+      </ul></div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── PRIZES ── -->
-  <section class="section" id="section-prizes">
-    <div class="section-header">
-      <h2>獎勵辦法</h2>
-      <p>各項獎勵內容及個人獎項說明</p>
+<!-- ── PRIZES ── -->
+<section class="section" id="section-prizes">
+  <div class="section-header"><h2>獎勵辦法</h2><p>各項獎勵內容及個人獎項說明</p></div>
+  <div class="prizes-grid">
+    <div class="prize-card gold-prize"><div class="prize-rank">冠</div><div class="prize-title">冠軍</div><div class="prize-amount">$6,000</div><div class="prize-desc">禮券 ＋ 冠軍獎盃 1 座</div></div>
+    <div class="prize-card silver-prize"><div class="prize-rank">亞</div><div class="prize-title">亞軍</div><div class="prize-amount">$4,000</div><div class="prize-desc">禮券 ＋ 亞軍獎盃 1 座</div></div>
+    <div class="prize-card bronze-prize"><div class="prize-rank">季</div><div class="prize-title">季軍</div><div class="prize-amount">$2,000</div><div class="prize-desc">禮券 ＋ 季軍獎盃 1 座</div></div>
+  </div>
+  <div class="divider"></div>
+  <div class="section-header"><h2>個人獎項</h2></div>
+  <div class="individual-awards">
+    <div class="award-item"><div class="award-icon">🏏</div><div><div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">打擊王（1名）</div><div style="font-size:0.8rem;color:var(--muted)">成績從複賽起計算，同時列入預賽打數。打擊率相同者採打數較多者獲獎。頒發打擊王獎盃1座。</div></div></div>
+    <div class="award-item"><div class="award-icon">⚾</div><div><div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">勝投王（1名）</div><div style="font-size:0.8rem;color:var(--muted)">先發投球局數須滿3局始得列入計算。頒發勝投王獎盃1座。</div></div></div>
+    <div class="award-item"><div class="award-icon">⭐</div><div><div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">球員MVP（1名）</div><div style="font-size:0.8rem;color:var(--muted)">由冠軍隊伍提名1名球員。頒發MVP獎盃1座。</div></div></div>
+    <div class="award-item"><div class="award-icon">👨‍🏫</div><div><div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">最佳教練獎（1名）</div><div style="font-size:0.8rem;color:var(--muted)">由冠軍隊伍教練獲得此殊榮。頒發最佳教練獎盃1座。</div></div></div>
+    <div class="award-item" style="grid-column:1/-1"><div class="award-icon">🎁</div><div><div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">參賽紀念獎品</div><div style="font-size:0.8rem;color:var(--muted)">參賽隊伍每隊贈<strong style="color:var(--white)">紀念球棒一支</strong>。</div></div></div>
+  </div>
+</section>
+
+<!-- ── REGISTER ── -->
+<section class="section" id="section-register">
+  <div class="section-header"><h2>線上報名</h2><p>填寫完整資料後送出，資料將自動儲存至 Google Sheets</p></div>
+  <div class="form-notice">
+    ⚠️ <strong>重要提醒：</strong>本報名系統資料將自動傳送至主辦單位 Google Sheets。報名截止日期：<strong>114年07月31日（四）17:00</strong>。送出後請保存系統回傳的報名序號。
+  </div>
+  <div class="form-section">
+    <h3>隊伍基本資料</h3>
+    <div class="form-grid">
+      <div class="form-group"><label>隊名 *</label><input type="text" id="team-name" placeholder="請輸入隊名"></div>
+      <div class="form-group"><label>領隊姓名 *</label><input type="text" id="leader-name" placeholder="請輸入領隊姓名"></div>
+      <div class="form-group"><label>服務單位 *</label><input type="text" id="org-name" placeholder="請輸入服務單位名稱"></div>
+      <div class="form-group"><label>教練姓名</label><input type="text" id="coach-name" placeholder="請輸入教練姓名（如有）"></div>
+      <div class="form-group"><label>聯絡人（可由球員兼任）*</label><input type="text" id="contact-name" placeholder="請輸入聯絡人姓名"></div>
+      <div class="form-group"><label>聯絡電話 *</label><input type="tel" id="contact-phone" placeholder="例：0912-345-678"></div>
+      <div class="form-group" style="grid-column:1/-1"><label>電子信箱 *</label><input type="email" id="contact-email" placeholder="請輸入聯絡E-mail"></div>
     </div>
-
-    <div class="prizes-grid">
-      <div class="prize-card gold-prize">
-        <div class="prize-rank">冠</div>
-        <div class="prize-title">冠軍</div>
-        <div class="prize-amount">$6,000</div>
-        <div class="prize-desc">禮券 ＋ 冠軍獎盃 1 座</div>
-      </div>
-      <div class="prize-card silver-prize">
-        <div class="prize-rank">亞</div>
-        <div class="prize-title">亞軍</div>
-        <div class="prize-amount">$4,000</div>
-        <div class="prize-desc">禮券 ＋ 亞軍獎盃 1 座</div>
-      </div>
-      <div class="prize-card bronze-prize">
-        <div class="prize-rank">季</div>
-        <div class="prize-title">季軍</div>
-        <div class="prize-amount">$2,000</div>
-        <div class="prize-desc">禮券 ＋ 季軍獎盃 1 座</div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="section-header">
-      <h2>個人獎項</h2>
-      <p>各特殊個人獎項說明</p>
-    </div>
-
-    <div class="individual-awards">
-      <div class="award-item">
-        <div class="award-icon">🏏</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">打擊王（1名）</div>
-          <div style="font-size:0.8rem;color:var(--muted)">成績從複賽起計算，同時列入預賽打數。打擊率相同者採打數較多者獲獎。頒發打擊王獎盃1座。</div>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-icon">⚾</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">勝投王（1名）</div>
-          <div style="font-size:0.8rem;color:var(--muted)">先發投球局數須滿3局始得列入計算。頒發勝投王獎盃1座。</div>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-icon">⭐</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">球員MVP（1名）</div>
-          <div style="font-size:0.8rem;color:var(--muted)">由冠軍隊伍提名1名球員。頒發MVP獎盃1座。</div>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-icon">👨‍🏫</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">最佳教練獎（1名）</div>
-          <div style="font-size:0.8rem;color:var(--muted)">由冠軍隊伍教練獲得此殊榮。頒發最佳教練獎盃1座。</div>
-        </div>
-      </div>
-      <div class="award-item" style="grid-column: 1 / -1">
-        <div class="award-icon">🎁</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:0.3rem">參賽紀念獎品</div>
-          <div style="font-size:0.8rem;color:var(--muted)">參賽隊伍每隊贈<strong style="color:var(--white)">紀念球棒一支</strong>。</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── REGISTER ── -->
-  <section class="section" id="section-register">
-    <div class="section-header">
-      <h2>線上報名</h2>
-      <p>請填寫完整資料後送出，本系統僅供資料整理，仍請以電子郵件寄送確認</p>
-    </div>
-
-    <div class="form-notice">
-      ⚠️ <strong>重要提醒：</strong>本報名系統供資料預覽與整理用途，<strong>報名須以電子郵件寄送至 a11041@ems.com.tw 並電話確認</strong>，方完成報名程序。報名截止日期：<strong>114年07月31日（四）17:00</strong>
-    </div>
-
-    <!-- Team Info -->
-    <div class="form-section">
-      <h3>隊伍基本資料</h3>
-      <div class="form-grid">
-        <div class="form-group">
-          <label>隊名 *</label>
-          <input type="text" id="team-name" placeholder="請輸入隊名">
-        </div>
-        <div class="form-group">
-          <label>領隊姓名 *</label>
-          <input type="text" id="leader-name" placeholder="請輸入領隊姓名">
-        </div>
-        <div class="form-group">
-          <label>服務單位 *</label>
-          <input type="text" id="org-name" placeholder="請輸入服務單位名稱">
-        </div>
-        <div class="form-group">
-          <label>教練姓名</label>
-          <input type="text" id="coach-name" placeholder="請輸入教練姓名（如有）">
-        </div>
-        <div class="form-group">
-          <label>聯絡人（可由球員兼任）*</label>
-          <input type="text" id="contact-name" placeholder="請輸入聯絡人姓名">
-        </div>
-        <div class="form-group">
-          <label>聯絡電話 *</label>
-          <input type="tel" id="contact-phone" placeholder="例：0912-345-678">
-        </div>
-        <div class="form-group" style="grid-column: 1 / -1">
-          <label>電子信箱 *</label>
-          <input type="email" id="contact-email" placeholder="請輸入聯絡E-mail">
-        </div>
-      </div>
-    </div>
-
-    <!-- Players -->
-    <div class="form-section">
-      <h3>球員名單</h3>
-      <div class="counter-badge" id="player-counter">
-        目前人數：<span id="player-count">0</span> / 24 人（含領隊、教練）
-      </div>
-      <div class="players-table-wrapper">
-        <table class="players-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>姓名 *</th>
-              <th>類別 *</th>
-              <th>生日（民國）</th>
-              <th>身分證後4碼</th>
-              <th>手機</th>
-              <th>素食</th>
-              <th style="width:30px">刪</th>
-            </tr>
-          </thead>
-          <tbody id="players-tbody">
-          </tbody>
-        </table>
-      </div>
-      <button class="add-player-btn" onclick="addPlayerRow()">＋ 新增球員</button>
-    </div>
-
-    <div class="form-notice">
-      📌 報名資料僅用於本次球賽聯繫及保險用途。<strong>因投保意外險，請務必填寫清楚詳細資料。</strong>每隊報名人數（含領隊、隊長、隊員及聯絡人）以<strong>24人</strong>為限，不得重複報名。
-    </div>
-
-    <div class="submit-area">
-      <button class="btn btn-primary" onclick="submitRegistration()">✉️ 儲存並產生報名資料</button>
-      <button class="btn btn-outline" onclick="exportRegistration()">📋 複製報名資料</button>
-      <span style="font-size:0.8rem;color:var(--muted)">資料儲存於本機瀏覽器中</span>
-    </div>
-  </section>
-
-  <!-- ── HOTEL ── -->
-  <section class="section" id="section-hotel">
-    <div class="section-header">
-      <h2>住宿安排</h2>
-      <p>賽事推薦住宿資訊，如有需求請聯繫承辦單位</p>
-    </div>
-
-    <div class="card" style="margin-bottom:1.5rem;background:rgba(26,58,107,0.15);border-color:rgba(26,58,107,0.4)">
-      <div style="font-size:0.88rem;color:var(--muted);line-height:1.8">
-        🏨 本次賽事推薦住宿為<strong style="color:var(--white)">福爾摩沙遊艇酒店</strong>與<strong style="color:var(--white)">富信／富華大飯店</strong>，兩家飯店皆提供專屬活動優惠方案。如有住宿需求，請各隊經理先與承辦單位聯繫索取優惠價目，並填寫房型需求統計表。
-      </div>
-    </div>
-
-    <div class="hotel-tabs">
-      <button class="hotel-tab active" onclick="switchHotel(this, 'fuhua')">富信／富華大飯店</button>
-      <button class="hotel-tab" onclick="switchHotel(this, 'formosa')">福爾摩沙遊艇酒店</button>
-    </div>
-
-    <div class="hotel-panel active" id="hotel-fuhua">
-      <div class="form-grid" style="margin-bottom:1.5rem">
-        <div class="form-group">
-          <label>單位</label>
-          <input type="text" id="fh-org" placeholder="請輸入單位名稱">
-        </div>
-        <div class="form-group">
-          <label>聯絡人</label>
-          <input type="text" id="fh-contact" placeholder="聯絡人姓名">
-        </div>
-        <div class="form-group">
-          <label>聯絡電話</label>
-          <input type="tel" id="fh-phone" placeholder="電話號碼">
-        </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" id="fh-email" placeholder="E-mail">
-        </div>
-      </div>
-
-      <div class="players-table-wrapper">
-        <table class="hotel-room-table">
-          <thead>
-            <tr>
-              <th>飯店</th><th>客房名稱</th><th>床型/人數</th><th>間數</th><th>備註</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>富華</td><td>普通客房(無窗)</td><td>一中床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富華</td><td>標準客房(氣窗)</td><td>一大床或兩小床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富華</td><td>商務客房</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富華</td><td>雅緻客房</td><td>兩小床（可拆併)/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富華</td><td>麗緻客房(有浴缸)</td><td>兩小床（可拆併)/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富華</td><td>標準家庭房(氣窗)</td><td>一大一中床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>標準客房</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>雅緻雙人房</td><td>兩小床（可拆併)/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>麗緻雙人房(有浴缸)</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>雅緻三人房</td><td>三小床（可拆併)/3人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>麗緻三人房(有浴缸)</td><td>三小床（可拆併)/3人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>標準家庭房</td><td>一大兩小床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>雅緻家庭房</td><td>兩大床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>豪華家庭房(有浴缸)</td><td>兩大床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>豪華客房(有浴缸)</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>商務套房</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>富信</td><td>尊爵套房</td><td>兩大床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <button class="btn btn-outline" style="margin-top:1rem" onclick="showToast('住宿需求已暫存！請於報名截止日前寄送至承辦單位','success')">💾 暫存住宿需求</button>
-    </div>
-
-    <div class="hotel-panel" id="hotel-formosa">
-      <div class="form-grid" style="margin-bottom:1.5rem">
-        <div class="form-group">
-          <label>單位</label>
-          <input type="text" id="fm-org" placeholder="請輸入單位名稱">
-        </div>
-        <div class="form-group">
-          <label>聯絡人</label>
-          <input type="text" id="fm-contact" placeholder="聯絡人姓名">
-        </div>
-        <div class="form-group">
-          <label>聯絡電話</label>
-          <input type="tel" id="fm-phone" placeholder="電話號碼">
-        </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" id="fm-email" placeholder="E-mail">
-        </div>
-      </div>
-
-      <div class="players-table-wrapper">
-        <table class="hotel-room-table">
-          <thead>
-            <tr>
-              <th>入住日期</th><th>客房名稱</th><th>床型/人數</th><th>間數</th><th>備註</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>9/18（四）</td><td>雅緻雙人房</td><td>一大床/兩小床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>9/18（四）</td><td>雅緻家庭房</td><td>兩大床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>9/19（五）</td><td>雅緻雙人房</td><td>一大床/兩小床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>9/19（五）</td><td>雅緻家庭房</td><td>兩大床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>9/20（六）</td><td>雅緻雙人房</td><td>一大床/兩小床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-            <tr><td>9/20（六）</td><td>雅緻家庭房</td><td>兩大床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <button class="btn btn-outline" style="margin-top:1rem" onclick="showToast('住宿需求已暫存！請於報名截止日前寄送至承辦單位','success')">💾 暫存住宿需求</button>
-    </div>
-
-    <div class="form-notice" style="margin-top:1.5rem">
-      📝 <strong>注意事項：</strong>請於<strong>報名截止日前</strong>一併回傳住宿統計表。若有特別需求（如行動不便、性別安排等），請於備註欄註明。如需優惠價目，請先聯繫承辦單位劉羿君 (06)5050207#593。
-    </div>
-  </section>
-
-  <!-- ── RESULTS ── -->
-  <section class="section" id="section-results">
-    <div class="section-header">
-      <h2>賽事結果</h2>
-      <p>即時賽事公告與比分資訊</p>
-    </div>
-
-    <!-- Announcements -->
-    <div class="announcements-list" id="announcements-list">
-      <div class="announcement-item">
-        <div>
-          <div class="announcement-meta">2025-09-19 08:30</div>
-          <div class="announcement-text">🎊 114年慢速壘球錦標賽今日正式開幕！請各隊派10名以上隊員參加上午10:00開幕典禮。</div>
-        </div>
-        <span class="announcement-type type-info">公告</span>
-      </div>
-      <div class="announcement-item">
-        <div>
-          <div class="announcement-meta">2025-09-19 09:00</div>
-          <div class="announcement-text">⚾ 預賽賽程開始，請各隊確認賽程表並準時上場。比賽用球由承辦單位提供，請自備木棒。</div>
-        </div>
-        <span class="announcement-type type-info">公告</span>
-      </div>
-    </div>
-
-    <!-- Standings placeholder -->
-    <div class="section-header" style="margin-top:2rem">
-      <h2>積分榜</h2>
-      <p>預賽積分排名（賽事進行中更新）</p>
-    </div>
-
-    <div class="bracket-placeholder" id="standings-placeholder" style="display:none">
-      <span class="big-icon">⚾</span>
-      <div style="font-size:1rem;margin-bottom:0.5rem">賽事尚未開始</div>
-      <div style="font-size:0.85rem">積分榜將於比賽開始後更新</div>
-    </div>
-
+  </div>
+  <div class="form-section">
+    <h3>球員名單</h3>
+    <div class="counter-badge" id="player-counter">目前人數：<span id="player-count">0</span> / 24 人（含領隊、教練）</div>
     <div class="players-table-wrapper">
-      <table class="standings-table" id="standings-table">
-        <thead>
-          <tr>
-            <th>排名</th>
-            <th>隊名</th>
-            <th>賽</th>
-            <th>勝</th>
-            <th>和</th>
-            <th>敗</th>
-            <th>積分</th>
-            <th>得分</th>
-            <th>失分</th>
-            <th>淨得分</th>
-            <th>狀態</th>
-          </tr>
-        </thead>
-        <tbody id="standings-tbody">
-          <tr>
-            <td colspan="11" style="text-align:center;color:var(--muted);padding:2rem">
-              ⏳ 等待賽事開始後由管理員更新積分資料
-            </td>
-          </tr>
+      <table class="players-table">
+        <thead><tr><th>#</th><th>姓名 *</th><th>類別 *</th><th>生日（民國）</th><th>身分證後4碼</th><th>手機</th><th>素食</th><th style="width:30px">刪</th></tr></thead>
+        <tbody id="players-tbody"></tbody>
+      </table>
+    </div>
+    <button class="add-player-btn" onclick="addPlayerRow()">＋ 新增球員</button>
+  </div>
+  <div class="form-notice">📌 報名資料僅用於本次球賽聯繫及保險用途。<strong>因投保意外險，請務必填寫清楚詳細資料。</strong>每隊報名人數以<strong>24人</strong>為限。</div>
+  <div class="submit-area">
+    <button class="btn btn-primary" id="submit-btn" onclick="submitRegistration()">✉️ 送出報名資料</button>
+    <button class="btn btn-outline" onclick="exportRegistration()">📋 複製報名內容</button>
+    <span style="font-size:0.8rem;color:var(--muted)" id="submit-status"></span>
+  </div>
+</section>
+
+<!-- ── HOTEL ── -->
+<section class="section" id="section-hotel">
+  <div class="section-header"><h2>住宿安排</h2><p>賽事推薦住宿資訊，如有需求請聯繫承辦單位</p></div>
+  <div class="card" style="margin-bottom:1.5rem;background:rgba(26,58,107,0.15);border-color:rgba(26,58,107,0.4)">
+    <div style="font-size:0.88rem;color:var(--muted);line-height:1.8">🏨 本次賽事推薦住宿為<strong style="color:var(--white)">福爾摩沙遊艇酒店</strong>與<strong style="color:var(--white)">富信／富華大飯店</strong>，兩家飯店皆提供專屬活動優惠方案。如有住宿需求，請各隊經理先與承辦單位聯繫索取優惠價目，並填寫房型需求統計表。</div>
+  </div>
+  <div class="hotel-tabs">
+    <button class="hotel-tab active" onclick="switchHotel(this,'fuhua')">富信／富華大飯店</button>
+    <button class="hotel-tab" onclick="switchHotel(this,'formosa')">福爾摩沙遊艇酒店</button>
+  </div>
+  <div class="hotel-panel active" id="hotel-fuhua">
+    <div class="form-grid" style="margin-bottom:1.5rem">
+      <div class="form-group"><label>單位</label><input type="text" id="fh-org" placeholder="請輸入單位名稱"></div>
+      <div class="form-group"><label>聯絡人</label><input type="text" id="fh-contact" placeholder="聯絡人姓名"></div>
+      <div class="form-group"><label>聯絡電話</label><input type="tel" id="fh-phone" placeholder="電話號碼"></div>
+      <div class="form-group"><label>E-mail</label><input type="email" id="fh-email" placeholder="E-mail"></div>
+    </div>
+    <div class="players-table-wrapper">
+      <table class="hotel-room-table">
+        <thead><tr><th>飯店</th><th>客房名稱</th><th>床型/人數</th><th>間數</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>富華</td><td>普通客房(無窗)</td><td>一中床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富華</td><td>標準客房(氣窗)</td><td>一大床或兩小床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富華</td><td>商務客房</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富華</td><td>雅緻客房</td><td>兩小床（可拆併)/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富華</td><td>麗緻客房(有浴缸)</td><td>兩小床（可拆併)/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富華</td><td>標準家庭房(氣窗)</td><td>一大一中床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>標準客房</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>雅緻雙人房</td><td>兩小床（可拆併)/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>麗緻雙人房(有浴缸)</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>雅緻三人房</td><td>三小床（可拆併)/3人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>麗緻三人房(有浴缸)</td><td>三小床（可拆併)/3人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>標準家庭房</td><td>一大兩小床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>雅緻家庭房</td><td>兩大床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>豪華家庭房(有浴缸)</td><td>兩大床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>豪華客房(有浴缸)</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>商務套房</td><td>一大床/2人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>富信</td><td>尊爵套房</td><td>兩大床/4人</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
         </tbody>
       </table>
     </div>
-
-    <!-- Recent Scores -->
-    <div class="section-header" style="margin-top:2rem">
-      <h2>最新比分</h2>
+    <button class="btn btn-outline" onclick="showToast('住宿需求已暫存！請於報名截止日前寄送至承辦單位','success')">💾 暫存住宿需求</button>
+  </div>
+  <div class="hotel-panel" id="hotel-formosa">
+    <div class="form-grid" style="margin-bottom:1.5rem">
+      <div class="form-group"><label>單位</label><input type="text" id="fm-org" placeholder="請輸入單位名稱"></div>
+      <div class="form-group"><label>聯絡人</label><input type="text" id="fm-contact" placeholder="聯絡人姓名"></div>
+      <div class="form-group"><label>聯絡電話</label><input type="tel" id="fm-phone" placeholder="電話號碼"></div>
+      <div class="form-group"><label>E-mail</label><input type="email" id="fm-email" placeholder="E-mail"></div>
     </div>
-    <div id="scores-list">
-      <div class="bracket-placeholder">
-        <span class="big-icon">🏟️</span>
-        <div style="font-size:1rem;margin-bottom:0.5rem">比賽結果即將公佈</div>
-        <div style="font-size:0.85rem">管理員將於比賽進行中陸續更新比分</div>
+    <div class="players-table-wrapper">
+      <table class="hotel-room-table">
+        <thead><tr><th>入住日期</th><th>客房名稱</th><th>床型/人數</th><th>間數</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>9/18（四）</td><td>雅緻雙人房</td><td>一大床/兩小床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>9/18（四）</td><td>雅緻家庭房</td><td>兩大床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>9/19（五）</td><td>雅緻雙人房</td><td>一大床/兩小床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>9/19（五）</td><td>雅緻家庭房</td><td>兩大床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>9/20（六）</td><td>雅緻雙人房</td><td>一大床/兩小床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+          <tr><td>9/20（六）</td><td>雅緻家庭房</td><td>兩大床</td><td><input type="number" min="0" placeholder="0"></td><td><input type="text" style="width:120px" placeholder="特殊需求"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn btn-outline" onclick="showToast('住宿需求已暫存！請於報名截止日前寄送至承辦單位','success')">💾 暫存住宿需求</button>
+  </div>
+  <div class="form-notice" style="margin-top:1.5rem">📝 <strong>注意事項：</strong>請於<strong>報名截止日前</strong>一併回傳住宿統計表。若有特別需求（如行動不便、性別安排等），請於備註欄註明。如需優惠價目，請先聯繫承辦單位劉羿君 (06)5050207#593。</div>
+</section>
+
+<!-- ── RESULTS ── -->
+<section class="section" id="section-results">
+  <div class="section-header"><h2>賽事結果</h2><p>即時賽事公告與比分資訊</p></div>
+  <div id="announcements-list" class="announcements-list">
+    <div style="text-align:center;padding:2rem;color:var(--muted)"><span class="loading-spinner"></span> 載入公告中...</div>
+  </div>
+  <div class="section-header" style="margin-top:2rem"><h2>積分榜</h2><p>預賽積分排名</p></div>
+  <div class="players-table-wrapper">
+    <table class="standings-table">
+      <thead><tr><th>排名</th><th>隊名</th><th>賽</th><th>勝</th><th>和</th><th>敗</th><th>積分</th><th>得分</th><th>失分</th><th>淨得分</th></tr></thead>
+      <tbody id="standings-tbody"><tr><td colspan="10" style="text-align:center;color:var(--muted);padding:2rem"><span class="loading-spinner"></span> 載入積分資料中...</td></tr></tbody>
+    </table>
+  </div>
+  <div class="section-header" style="margin-top:2rem"><h2>最新比分</h2></div>
+  <div id="scores-list"><div style="text-align:center;padding:2rem;color:var(--muted)"><span class="loading-spinner"></span> 載入比分中...</div></div>
+</section>
+
+<!-- ── ADMIN ── -->
+<section class="section" id="section-admin">
+  <div class="section-header"><h2>管理後台</h2><p>承辦單位專用</p></div>
+
+  <!-- GAS URL Config -->
+  <div id="gas-config-banner" class="config-banner">
+    ⚙️ <strong>尚未設定 Google Apps Script 網址</strong> — 請先依照下方說明建立後端，再將網址貼入後啟用。
+    <div style="margin-top:0.8rem;display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center">
+      <input type="text" id="gas-url-input" placeholder="貼上 Google Apps Script 部署網址 (https://script.google.com/...)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--white);padding:0.6rem 0.9rem;border-radius:5px;flex:1;min-width:280px;font-family:monospace;font-size:0.8rem;outline:none">
+      <button class="btn btn-primary btn-sm" onclick="saveGasUrl()">💾 儲存網址</button>
+    </div>
+  </div>
+
+  <!-- Login -->
+  <div id="admin-login-area">
+    <div class="admin-notice">🔒 此區域僅供承辦單位（弓銓企業）人員使用</div>
+    <div class="admin-login">
+      <div class="form-group" style="margin-bottom:0.8rem">
+        <label>帳號</label>
+        <input type="text" id="admin-user" placeholder="輸入帳號" autocomplete="username">
       </div>
-    </div>
-  </section>
-
-  <!-- ── ADMIN ── -->
-  <section class="section" id="section-admin">
-    <div class="section-header">
-      <h2>管理後台</h2>
-      <p>承辦單位專用，可公告即時賽事資訊及比分</p>
-    </div>
-
-    <div id="admin-login-area">
-      <div class="admin-notice">
-        🔒 此區域僅供承辦單位（弓銓企業）人員使用
+      <div class="form-group" style="margin-bottom:1.2rem">
+        <label>密碼</label>
+        <input type="password" id="admin-pw" placeholder="輸入密碼" autocomplete="current-password" onkeydown="if(event.key==='Enter')adminLogin()">
       </div>
-      <div class="admin-login">
-        <div class="form-group" style="margin-bottom:1rem">
-          <label>管理員密碼</label>
-          <input type="password" id="admin-pw" placeholder="輸入密碼" onkeydown="if(event.key==='Enter')adminLogin()">
-        </div>
-        <button class="btn btn-primary" onclick="adminLogin()">🔓 登入管理後台</button>
-        <div style="margin-top:0.8rem;font-size:0.78rem;color:var(--muted)">預設密碼：softball114</div>
-      </div>
+      <button class="btn btn-primary" onclick="adminLogin()" id="login-btn">🔓 登入管理後台</button>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div class="admin-panel" id="admin-panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+      <div style="font-size:0.85rem;color:var(--muted)">登入身份：<strong id="logged-user" style="color:var(--accent)"></strong></div>
+      <button class="btn btn-outline btn-sm" onclick="adminLogout()">登出</button>
     </div>
 
-    <div class="admin-panel" id="admin-panel">
-      <!-- Post Announcement -->
+    <div class="admin-tabs">
+      <button class="admin-tab-btn active" onclick="switchAdminTab(this,'tab-announce')">📢 公告管理</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab(this,'tab-scores')">⚾ 比分管理</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab(this,'tab-standings')">📊 積分榜</button>
+      <button class="admin-tab-btn" onclick="switchAdminTab(this,'tab-registrations')">📋 報名名單</button>
+      <button class="admin-tab-btn" id="tab-users-btn" onclick="switchAdminTab(this,'tab-users')" style="display:none">👥 帳號管理</button>
+    </div>
+
+    <!-- 公告管理 -->
+    <div class="admin-tab-panel active" id="tab-announce">
       <div class="card" style="margin-bottom:1.5rem">
-        <div class="info-label" style="margin-bottom:1rem">📢 發布公告</div>
+        <div class="info-label" style="margin-bottom:1rem">發布新公告</div>
         <div class="form-grid">
           <div class="form-group">
             <label>公告類型</label>
@@ -1666,10 +603,14 @@
         </div>
         <button class="btn btn-primary" style="margin-top:1rem" onclick="postAnnouncement()">📣 發布公告</button>
       </div>
+      <div class="info-label" style="margin-bottom:1rem">已發布公告（可刪除）</div>
+      <div id="admin-ann-list"></div>
+    </div>
 
-      <!-- Post Score -->
+    <!-- 比分管理 -->
+    <div class="admin-tab-panel" id="tab-scores">
       <div class="card" style="margin-bottom:1.5rem">
-        <div class="info-label" style="margin-bottom:1rem">⚾ 登錄比分</div>
+        <div class="info-label" style="margin-bottom:1rem">登錄新比分</div>
         <div class="result-entry-grid">
           <div class="form-group">
             <label>主隊隊名</label>
@@ -1684,26 +625,59 @@
           </div>
         </div>
         <div class="form-group" style="margin-bottom:1rem">
-          <label>賽事說明（如：預賽第一輪）</label>
+          <label>賽事說明</label>
           <input type="text" id="score-note" placeholder="例：預賽 A組 第1場">
         </div>
         <button class="btn btn-primary" onclick="postScore()">✅ 登錄比分</button>
       </div>
+      <div class="info-label" style="margin-bottom:1rem">比賽記錄（可修改／刪除）</div>
+      <div id="admin-scores-list"></div>
+    </div>
 
-      <!-- Team Standings Update -->
-      <div class="card">
-        <div class="info-label" style="margin-bottom:1rem">📊 更新積分榜</div>
-        <div id="standings-editor" style="font-size:0.85rem;color:var(--muted);margin-bottom:1rem">
-          在此新增參賽隊伍以建立積分榜
-        </div>
-        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:1rem">
+    <!-- 積分榜管理 -->
+    <div class="admin-tab-panel" id="tab-standings">
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="info-label" style="margin-bottom:1rem">新增參賽隊伍</div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
           <input type="text" id="new-team-name" placeholder="輸入隊名" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--white);padding:0.6rem 0.9rem;border-radius:5px;flex:1;min-width:150px;font-family:'Noto Sans TC',sans-serif;outline:none">
           <button class="btn btn-outline" onclick="addTeamToStandings()">＋ 新增隊伍</button>
         </div>
-        <div id="standings-manage"></div>
       </div>
+      <div id="standings-manage"></div>
     </div>
-  </section>
+
+    <!-- 報名名單 -->
+    <div class="admin-tab-panel" id="tab-registrations">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem">
+        <div style="font-size:0.85rem;color:var(--muted)">共 <strong id="reg-count" style="color:var(--white)">0</strong> 隊已報名</div>
+        <button class="btn btn-outline btn-sm" onclick="loadRegistrations()">🔄 重新載入</button>
+      </div>
+      <div id="reg-list"><div style="text-align:center;padding:2rem;color:var(--muted)"><span class="loading-spinner"></span> 載入報名資料...</div></div>
+    </div>
+
+    <!-- 帳號管理 (superadmin only) -->
+    <div class="admin-tab-panel" id="tab-users">
+      <div class="card" style="margin-bottom:1.5rem">
+        <div class="info-label" style="margin-bottom:1rem">新增管理員帳號</div>
+        <div class="form-grid">
+          <div class="form-group"><label>帳號（英文數字）*</label><input type="text" id="new-admin-user" placeholder="帳號名稱" autocomplete="off"></div>
+          <div class="form-group"><label>密碼 *</label><input type="password" id="new-admin-pw" placeholder="設定密碼（至少6碼）" autocomplete="new-password"></div>
+          <div class="form-group"><label>顯示名稱</label><input type="text" id="new-admin-display" placeholder="例：劉組長"></div>
+          <div class="form-group">
+            <label>權限等級</label>
+            <select id="new-admin-role">
+              <option value="admin">管理員（可公告/比分/報名）</option>
+              <option value="superadmin">超級管理員（含帳號管理）</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:1rem" onclick="createAdminUser()">➕ 建立帳號</button>
+      </div>
+      <div class="info-label" style="margin-bottom:1rem">現有帳號</div>
+      <div id="users-list"></div>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -1716,110 +690,323 @@
 
 <div class="toast-container" id="toast-container"></div>
 
+<!-- Edit Score Modal -->
+<div class="modal-overlay hidden" id="edit-score-modal">
+  <div class="modal">
+    <h3>✏️ 修改比分</h3>
+    <input type="hidden" id="edit-score-id">
+    <div class="result-entry-grid" style="margin-bottom:1rem">
+      <div class="form-group">
+        <label>主隊</label>
+        <input type="text" id="edit-score-team-a">
+        <input type="text" id="edit-score-a" class="score-input-big" style="margin-top:0.5rem;font-size:2rem;text-align:center">
+      </div>
+      <div class="vs-separator">VS</div>
+      <div class="form-group">
+        <label>客隊</label>
+        <input type="text" id="edit-score-team-b">
+        <input type="text" id="edit-score-b" class="score-input-big" style="margin-top:0.5rem;font-size:2rem;text-align:center">
+      </div>
+    </div>
+    <div class="form-group"><label>賽事說明</label><input type="text" id="edit-score-note"></div>
+    <div class="modal-actions">
+      <button class="btn btn-outline btn-sm" onclick="closeModal('edit-score-modal')">取消</button>
+      <button class="btn btn-primary btn-sm" onclick="saveEditScore()">💾 儲存修改</button>
+    </div>
+  </div>
+</div>
+
+<!-- View Registration Modal -->
+<div class="modal-overlay hidden" id="view-reg-modal">
+  <div class="modal" style="max-width:700px">
+    <h3>📋 報名詳情</h3>
+    <div id="view-reg-content"></div>
+    <div class="modal-actions">
+      <button class="btn btn-outline btn-sm" onclick="closeModal('view-reg-modal')">關閉</button>
+    </div>
+  </div>
+</div>
+
 <script>
+// ═══════════════════════════════════════════════
+// ⚙️  CONFIG — 填入你的 Google Apps Script 網址
+// ═══════════════════════════════════════════════
+const GAS_KEY = 'gas_url';
+let GAS_URL = localStorage.getItem(GAS_KEY) || '';
+
 // ── STATE ──
 let players = [];
-let announcements = JSON.parse(localStorage.getItem('announcements') || '[]');
-let scores = JSON.parse(localStorage.getItem('scores') || '[]');
-let standings = JSON.parse(localStorage.getItem('standings') || '[]');
-let adminLoggedIn = false;
+let playerRowId = 0;
+let currentUser = null; // { username, displayName, role }
+let adminData = { announcements: [], scores: [], standings: [], users: [] };
 
-// ── NAVIGATION ──
+// ═══════════════════════════════════════════════
+// GAS URL MANAGEMENT
+// ═══════════════════════════════════════════════
+function saveGasUrl() {
+  const url = document.getElementById('gas-url-input').value.trim();
+  if (!url.startsWith('https://script.google.com')) {
+    showToast('請貼入正確的 Google Apps Script 部署網址', 'error'); return;
+  }
+  GAS_URL = url;
+  localStorage.setItem(GAS_KEY, url);
+  document.getElementById('gas-config-banner').className = 'config-banner ok';
+  document.getElementById('gas-config-banner').innerHTML = `✅ <strong>Google Apps Script 已連結</strong> — <code>${url.substring(0,60)}...</code> <button class="btn btn-outline btn-sm" style="margin-left:1rem" onclick="resetGasUrl()">更換網址</button>`;
+  showToast('✅ 後端網址已儲存', 'success');
+}
+
+function resetGasUrl() {
+  localStorage.removeItem(GAS_KEY); GAS_URL = '';
+  document.getElementById('gas-config-banner').className = 'config-banner';
+  document.getElementById('gas-config-banner').innerHTML = `⚙️ <strong>尚未設定 Google Apps Script 網址</strong> — 請先依照說明建立後端，再將網址貼入後啟用。<div style="margin-top:0.8rem;display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center"><input type="text" id="gas-url-input" placeholder="貼上 Google Apps Script 部署網址" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--white);padding:0.6rem 0.9rem;border-radius:5px;flex:1;min-width:280px;font-family:monospace;font-size:0.8rem;outline:none"><button class="btn btn-primary btn-sm" onclick="saveGasUrl()">💾 儲存網址</button></div>`;
+}
+
+// ═══════════════════════════════════════════════
+// API CALLS (Google Apps Script backend)
+// ═══════════════════════════════════════════════
+async function gasCall(action, payload = {}) {
+  if (!GAS_URL) {
+    // Fallback: use localStorage for demo mode
+    return gasLocalFallback(action, payload);
+  }
+  try {
+    const res = await fetch(GAS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action, ...payload })
+    });
+    const data = await res.json();
+    return data;
+  } catch (e) {
+    console.error('GAS error:', e);
+    return gasLocalFallback(action, payload);
+  }
+}
+
+// Local storage fallback (demo mode without GAS)
+function gasLocalFallback(action, payload) {
+  const db = JSON.parse(localStorage.getItem('softball_db') || '{"announcements":[],"scores":[],"standings":[],"registrations":[],"users":[{"username":"admin","passwordHash":"softball114","displayName":"管理員","role":"superadmin"}]}');
+
+  switch(action) {
+    case 'login': {
+      const u = db.users.find(u => u.username === payload.username && u.passwordHash === payload.password);
+      if (u) return { ok: true, user: { username: u.username, displayName: u.displayName, role: u.role } };
+      return { ok: false, error: '帳號或密碼錯誤' };
+    }
+    case 'getPublicData':
+      return { ok: true, announcements: db.announcements, scores: db.scores, standings: db.standings };
+    case 'addAnnouncement':
+      db.announcements.unshift({ id: Date.now(), ...payload.data });
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    case 'deleteAnnouncement':
+      db.announcements = db.announcements.filter(a => a.id != payload.id);
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    case 'addScore':
+      db.scores.unshift({ id: Date.now(), ...payload.data });
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    case 'updateScore': {
+      const idx = db.scores.findIndex(s => s.id == payload.id);
+      if (idx >= 0) db.scores[idx] = { ...db.scores[idx], ...payload.data };
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    }
+    case 'deleteScore':
+      db.scores = db.scores.filter(s => s.id != payload.id);
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    case 'addTeam':
+      if (!db.standings.find(t => t.name === payload.name)) db.standings.push({ name: payload.name, p:0, w:0, d:0, l:0, pts:0, gf:0, ga:0 });
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    case 'removeTeam':
+      db.standings = db.standings.filter(t => t.name !== payload.name);
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    case 'addRegistration':
+      db.registrations.push({ id: Date.now(), ...payload.data, submittedAt: new Date().toLocaleString('zh-TW') });
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true, regId: 'REG-' + Date.now() };
+    case 'getRegistrations':
+      return { ok: true, registrations: db.registrations };
+    case 'getUsers':
+      return { ok: true, users: db.users.map(u => ({ username: u.username, displayName: u.displayName, role: u.role })) };
+    case 'addUser': {
+      if (db.users.find(u => u.username === payload.username)) return { ok: false, error: '帳號已存在' };
+      db.users.push({ username: payload.username, passwordHash: payload.password, displayName: payload.displayName, role: payload.role });
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    }
+    case 'deleteUser':
+      if (payload.username === 'admin') return { ok: false, error: '無法刪除預設管理員' };
+      db.users = db.users.filter(u => u.username !== payload.username);
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true };
+    case 'recalcStandings': {
+      // recalculate standings from scores
+      db.standings.forEach(t => { t.p=0; t.w=0; t.d=0; t.l=0; t.pts=0; t.gf=0; t.ga=0; });
+      db.scores.forEach(s => {
+        let ta = db.standings.find(t => t.name === s.a);
+        let tb = db.standings.find(t => t.name === s.b);
+        if (!ta) { ta = { name:s.a,p:0,w:0,d:0,l:0,pts:0,gf:0,ga:0 }; db.standings.push(ta); }
+        if (!tb) { tb = { name:s.b,p:0,w:0,d:0,l:0,pts:0,gf:0,ga:0 }; db.standings.push(tb); }
+        ta.p++; tb.p++;
+        ta.gf += s.sa; ta.ga += s.sb;
+        tb.gf += s.sb; tb.ga += s.sa;
+        if (s.sa > s.sb) { ta.w++; ta.pts+=2; tb.l++; }
+        else if (s.sb > s.sa) { tb.w++; tb.pts+=2; ta.l++; }
+        else { ta.d++; ta.pts++; tb.d++; tb.pts++; }
+      });
+      db.standings.sort((a,b) => b.pts - a.pts || (b.gf-b.ga)-(a.gf-a.ga));
+      localStorage.setItem('softball_db', JSON.stringify(db));
+      return { ok: true, standings: db.standings };
+    }
+    default: return { ok: false, error: 'unknown action' };
+  }
+}
+
+// ═══════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════
 function switchSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('section-' + id).classList.add('active');
-  const tabs = document.querySelectorAll('.nav-tab');
   const map = ['info','rules','prizes','register','hotel','results','admin'];
   const idx = map.indexOf(id);
-  if (idx >= 0) tabs[idx].classList.add('active');
-
-  // Scroll to nav
+  if (idx >= 0) document.querySelectorAll('.nav-tab')[idx].classList.add('active');
   document.getElementById('main-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  if (id === 'results') renderResultsPage();
-  if (id === 'admin' && adminLoggedIn) renderStandingsManager();
+  if (id === 'results') loadPublicData();
+  if (id === 'admin') initAdminPage();
 }
 
-// ── RULES ACCORDION ──
-function toggleRule(el) {
-  el.classList.toggle('open');
-}
-
-// ── HOTEL TABS ──
+function toggleRule(el) { el.classList.toggle('open'); }
 function switchHotel(btn, id) {
   document.querySelectorAll('.hotel-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.hotel-panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('hotel-' + id).classList.add('active');
 }
+function switchAdminTab(btn, id) {
+  document.querySelectorAll('.admin-tab-btn').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.admin-tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+  if (id === 'tab-registrations') loadRegistrations();
+  if (id === 'tab-users') loadUsers();
+  if (id === 'tab-scores') loadAdminScores();
+  if (id === 'tab-announce') loadAdminAnnouncements();
+}
 
-// ── PLAYER ROWS ──
-let playerRowId = 0;
+// ═══════════════════════════════════════════════
+// PUBLIC DATA (Results page)
+// ═══════════════════════════════════════════════
+async function loadPublicData() {
+  const res = await gasCall('getPublicData');
+  if (!res.ok) return;
 
+  // Announcements
+  const annEl = document.getElementById('announcements-list');
+  if (res.announcements.length === 0) {
+    annEl.innerHTML = '<div class="bracket-placeholder"><span class="big-icon">📢</span><div>目前尚無公告</div></div>';
+  } else {
+    annEl.innerHTML = res.announcements.map(a => `
+      <div class="announcement-item">
+        <div>
+          <div class="announcement-meta">${a.time || a.submittedAt || ''}</div>
+          <div class="announcement-text">${a.text}</div>
+        </div>
+        <span class="announcement-type type-${a.type}">${a.type==='result'?'結果':a.type==='alert'?'緊急':'公告'}</span>
+      </div>`).join('');
+  }
+
+  // Standings
+  const stEl = document.getElementById('standings-tbody');
+  if (!res.standings || res.standings.length === 0) {
+    stEl.innerHTML = '<tr><td colspan="10" style="text-align:center;color:var(--muted);padding:2rem">⏳ 等待賽事開始後更新積分資料</td></tr>';
+  } else {
+    const cls = ['rank-1','rank-2','rank-3','rank-other'];
+    stEl.innerHTML = res.standings.map((t,i) => `
+      <tr>
+        <td><span class="rank-badge ${i<3?cls[i]:cls[3]}">${i+1}</span></td>
+        <td style="font-weight:600">${t.name}</td>
+        <td>${t.p}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td>
+        <td style="color:var(--accent);font-weight:700">${t.pts}</td>
+        <td>${t.gf}</td><td>${t.ga}</td>
+        <td style="color:${t.gf-t.ga>=0?'#81c784':'#ef9a9a'}">${t.gf>0||t.ga>0?(t.gf-t.ga>0?'+':'')+(t.gf-t.ga):'-'}</td>
+      </tr>`).join('');
+  }
+
+  // Scores
+  const scEl = document.getElementById('scores-list');
+  if (!res.scores || res.scores.length === 0) {
+    scEl.innerHTML = '<div class="bracket-placeholder"><span class="big-icon">🏟️</span><div>比賽結果即將公佈</div></div>';
+  } else {
+    scEl.innerHTML = res.scores.map(s => `
+      <div class="score-card">
+        <div style="text-align:right">
+          <div style="font-weight:700">${s.a}</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:${s.sa>s.sb?'var(--gold)':'var(--muted)'}">${s.sa}</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-family:'Bebas Neue',sans-serif;color:var(--accent)">VS</div>
+          <div style="font-size:0.72rem;color:var(--muted)">${s.note||''}</div>
+          <div style="font-size:0.7rem;color:var(--muted)">${s.time||''}</div>
+        </div>
+        <div style="text-align:left">
+          <div style="font-weight:700">${s.b}</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:${s.sb>s.sa?'var(--gold)':'var(--muted)'}">${s.sb}</div>
+        </div>
+      </div>`).join('');
+  }
+}
+
+// ═══════════════════════════════════════════════
+// REGISTRATION
+// ═══════════════════════════════════════════════
 function addPlayerRow() {
-  const count = players.length;
-  if (count >= 24) { showToast('每隊最多24人（含領隊及教練）', 'error'); return; }
-
+  if (players.length >= 24) { showToast('每隊最多24人（含領隊及教練）', 'error'); return; }
   const id = ++playerRowId;
   players.push({ id });
-
   const tbody = document.getElementById('players-tbody');
   const tr = document.createElement('tr');
   tr.id = 'pr-' + id;
   tr.innerHTML = `
-    <td class="row-num">${count + 1}</td>
+    <td class="row-num">${players.length}</td>
     <td><input type="text" placeholder="姓名" oninput="updatePlayer(${id},'name',this.value)"></td>
-    <td>
-      <select onchange="updatePlayer(${id},'type',this.value)">
-        <option value="">選擇</option>
-        <option value="領隊">領隊</option>
-        <option value="教練">教練</option>
-        <option value="球員">球員</option>
-      </select>
-    </td>
+    <td><select onchange="updatePlayer(${id},'type',this.value)"><option value="">選擇</option><option value="領隊">領隊</option><option value="教練">教練</option><option value="球員">球員</option></select></td>
     <td><input type="text" placeholder="80/01/01" oninput="updatePlayer(${id},'bday',this.value)" style="width:90px"></td>
     <td><input type="text" placeholder="1234" maxlength="4" oninput="updatePlayer(${id},'id4',this.value)" style="width:60px"></td>
     <td><input type="text" placeholder="0912-345-678" oninput="updatePlayer(${id},'phone',this.value)"></td>
     <td class="checkbox-cell"><input type="checkbox" onchange="updatePlayer(${id},'veg',this.checked)"></td>
-    <td><button onclick="removePlayer(${id})" style="background:none;border:none;color:#ef5350;cursor:pointer;font-size:1rem">✕</button></td>
-  `;
+    <td><button onclick="removePlayer(${id})" style="background:none;border:none;color:#ef5350;cursor:pointer;font-size:1rem">✕</button></td>`;
   tbody.appendChild(tr);
   updateCounter();
 }
-
-function updatePlayer(id, field, val) {
-  const p = players.find(p => p.id === id);
-  if (p) p[field] = val;
-}
-
+function updatePlayer(id, f, v) { const p = players.find(p => p.id===id); if(p) p[f]=v; }
 function removePlayer(id) {
-  players = players.filter(p => p.id !== id);
-  document.getElementById('pr-' + id)?.remove();
-  reNumberRows();
+  players = players.filter(p => p.id!==id);
+  document.getElementById('pr-'+id)?.remove();
+  document.querySelectorAll('#players-tbody tr').forEach((tr,i) => { const n=tr.querySelector('.row-num'); if(n) n.textContent=i+1; });
   updateCounter();
 }
-
-function reNumberRows() {
-  document.querySelectorAll('#players-tbody tr').forEach((tr, i) => {
-    const num = tr.querySelector('.row-num');
-    if (num) num.textContent = i + 1;
-  });
-}
-
 function updateCounter() {
   document.getElementById('player-count').textContent = players.length;
-  const c = document.getElementById('player-counter');
-  c.style.borderColor = players.length > 20 ? 'rgba(255,100,100,0.5)' : 'var(--border)';
 }
 
-// ── REGISTRATION ──
-function submitRegistration() {
+async function submitRegistration() {
   const teamName = document.getElementById('team-name').value.trim();
   const email = document.getElementById('contact-email').value.trim();
   if (!teamName) { showToast('請填寫隊名', 'error'); return; }
   if (!email) { showToast('請填寫聯絡Email', 'error'); return; }
   if (players.length === 0) { showToast('請新增至少一名球員', 'error'); return; }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading-spinner"></span> 送出中...';
+  document.getElementById('submit-status').textContent = '';
 
   const data = {
     teamName,
@@ -1828,246 +1015,366 @@ function submitRegistration() {
     coach: document.getElementById('coach-name').value,
     contact: document.getElementById('contact-name').value,
     phone: document.getElementById('contact-phone').value,
-    email,
-    players,
-    timestamp: new Date().toLocaleString('zh-TW')
+    email, players
   };
 
-  const existing = JSON.parse(localStorage.getItem('registrations') || '[]');
-  existing.push(data);
-  localStorage.setItem('registrations', JSON.stringify(existing));
-  showToast(`✅ 隊伍「${teamName}」資料已暫存！請記得以Email寄送報名表`, 'success');
+  const res = await gasCall('addRegistration', { data });
+  btn.disabled = false;
+  btn.innerHTML = '✉️ 送出報名資料';
+
+  if (res.ok) {
+    const regId = res.regId || 'REG-' + Date.now();
+    document.getElementById('submit-status').innerHTML = `<span style="color:#81c784">✅ 報名成功！序號：<strong>${regId}</strong>（請截圖保存）</span>`;
+    showToast(`✅ 隊伍「${teamName}」報名成功！序號：${regId}`, 'success');
+  } else {
+    showToast('送出失敗，請稍後再試', 'error');
+  }
 }
 
 function exportRegistration() {
   const teamName = document.getElementById('team-name').value || '（未填隊名）';
-  let text = `中華民國自來水協會 114年慢速壘球錦標賽 - 報名表\n`;
-  text += `=${'='.repeat(40)}\n`;
-  text += `隊名：${teamName}\n`;
-  text += `領隊：${document.getElementById('leader-name').value}\n`;
-  text += `服務單位：${document.getElementById('org-name').value}\n`;
-  text += `教練：${document.getElementById('coach-name').value}\n`;
-  text += `聯絡人：${document.getElementById('contact-name').value}\n`;
-  text += `電話：${document.getElementById('contact-phone').value}\n`;
-  text += `Email：${document.getElementById('contact-email').value}\n\n`;
-  text += `球員名單（共${players.length}人）\n`;
-  text += `-${'-'.repeat(60)}\n`;
-  players.forEach((p, i) => {
-    text += `${i+1}. ${p.name||''}  ${p.type||''}  ${p.bday||''}  身分證後4碼:${p.id4||''}  ${p.phone||''}  ${p.veg?'素食':''}\n`;
-  });
-  text += `\n請寄送至：a11041@ems.com.tw 並致電 (06)5050207#593 確認報名`;
-
-  navigator.clipboard.writeText(text).then(() => {
-    showToast('📋 報名資料已複製到剪貼簿！', 'success');
-  }).catch(() => {
-    showToast('請手動複製報名資料', 'error');
-  });
+  let text = `中華民國自來水協會 114年慢速壘球錦標賽 - 報名表\n${'='.repeat(40)}\n`;
+  text += `隊名：${teamName}\n領隊：${document.getElementById('leader-name').value}\n服務單位：${document.getElementById('org-name').value}\n`;
+  text += `教練：${document.getElementById('coach-name').value}\n聯絡人：${document.getElementById('contact-name').value}\n`;
+  text += `電話：${document.getElementById('contact-phone').value}\nEmail：${document.getElementById('contact-email').value}\n\n`;
+  text += `球員名單（共${players.length}人）\n${'-'.repeat(60)}\n`;
+  players.forEach((p,i) => { text += `${i+1}. ${p.name||''}  ${p.type||''}  ${p.bday||''}  後4碼:${p.id4||''}  ${p.phone||''}  ${p.veg?'素食':''}\n`; });
+  navigator.clipboard.writeText(text).then(() => showToast('📋 報名資料已複製！', 'success')).catch(() => showToast('請手動複製', 'error'));
 }
 
-// ── ADMIN ──
-function adminLogin() {
-  const pw = document.getElementById('admin-pw').value;
-  if (pw === 'softball114') {
-    adminLoggedIn = true;
-    document.getElementById('admin-login-area').style.display = 'none';
-    document.getElementById('admin-panel').classList.add('active');
-    renderStandingsManager();
-    renderResultsPage();
-    showToast('🔓 管理員登入成功', 'success');
-  } else {
-    showToast('密碼錯誤', 'error');
+// ═══════════════════════════════════════════════
+// ADMIN AUTH
+// ═══════════════════════════════════════════════
+function initAdminPage() {
+  const url = localStorage.getItem(GAS_KEY);
+  if (url) {
+    document.getElementById('gas-config-banner').className = 'config-banner ok';
+    document.getElementById('gas-config-banner').innerHTML = `✅ <strong>Google Apps Script 已連結</strong> — <code>${url.substring(0,60)}...</code> <button class="btn btn-outline btn-sm" style="margin-left:1rem" onclick="resetGasUrl()">更換網址</button>`;
+  }
+  if (!GAS_URL) {
+    document.getElementById('gas-config-banner').innerHTML += '<div style="margin-top:0.5rem;font-size:0.8rem;color:#ffb74d">⚠️ 未設定後端網址時，資料暫存於本機瀏覽器（示範模式）</div>';
   }
 }
 
-function postAnnouncement() {
+async function adminLogin() {
+  const username = document.getElementById('admin-user').value.trim();
+  const password = document.getElementById('admin-pw').value;
+  if (!username || !password) { showToast('請填寫帳號和密碼', 'error'); return; }
+
+  const btn = document.getElementById('login-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading-spinner"></span> 驗證中...';
+
+  const res = await gasCall('login', { username, password });
+  btn.disabled = false;
+  btn.innerHTML = '🔓 登入管理後台';
+
+  if (res.ok) {
+    currentUser = res.user;
+    document.getElementById('admin-login-area').style.display = 'none';
+    document.getElementById('admin-panel').classList.add('active');
+    document.getElementById('logged-user').textContent = `${res.user.displayName} (${res.user.role === 'superadmin' ? '超級管理員' : '管理員'})`;
+    if (res.user.role === 'superadmin') document.getElementById('tab-users-btn').style.display = '';
+    loadAdminAnnouncements();
+    showToast(`🔓 歡迎，${res.user.displayName}！`, 'success');
+  } else {
+    showToast(res.error || '帳號或密碼錯誤', 'error');
+  }
+}
+
+function adminLogout() {
+  currentUser = null;
+  document.getElementById('admin-panel').classList.remove('active');
+  document.getElementById('admin-login-area').style.display = '';
+  document.getElementById('admin-user').value = '';
+  document.getElementById('admin-pw').value = '';
+  document.getElementById('tab-users-btn').style.display = 'none';
+  showToast('已登出', '');
+}
+
+// ═══════════════════════════════════════════════
+// ANNOUNCEMENTS (Admin)
+// ═══════════════════════════════════════════════
+async function postAnnouncement() {
   const text = document.getElementById('ann-text').value.trim();
   const type = document.getElementById('ann-type').value;
   if (!text) { showToast('請輸入公告內容', 'error'); return; }
-
-  const item = {
-    text, type,
-    time: new Date().toLocaleString('zh-TW', { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' })
-  };
-
-  announcements.unshift(item);
-  localStorage.setItem('announcements', JSON.stringify(announcements));
-  document.getElementById('ann-text').value = '';
-  renderResultsPage();
-  showToast('✅ 公告已發布', 'success');
+  const res = await gasCall('addAnnouncement', { data: { text, type, time: new Date().toLocaleString('zh-TW', {year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) } });
+  if (res.ok) { document.getElementById('ann-text').value = ''; showToast('✅ 公告已發布', 'success'); loadAdminAnnouncements(); }
 }
 
-function postScore() {
+async function loadAdminAnnouncements() {
+  const res = await gasCall('getPublicData');
+  if (!res.ok) return;
+  const el = document.getElementById('admin-ann-list');
+  if (!res.announcements.length) { el.innerHTML = '<div style="color:var(--muted);font-size:0.85rem">尚無公告</div>'; return; }
+  el.innerHTML = res.announcements.map(a => `
+    <div class="announcement-item">
+      <div><div class="announcement-meta">${a.time||''}</div><div class="announcement-text">${a.text}</div></div>
+      <div style="display:flex;align-items:center;gap:0.5rem;flex-shrink:0">
+        <span class="announcement-type type-${a.type}">${a.type==='result'?'結果':a.type==='alert'?'緊急':'公告'}</span>
+        <button onclick="deleteAnnouncement(${a.id})" class="btn btn-danger btn-sm">刪除</button>
+      </div>
+    </div>`).join('');
+}
+
+async function deleteAnnouncement(id) {
+  if (!confirm('確定刪除此公告？')) return;
+  const res = await gasCall('deleteAnnouncement', { id });
+  if (res.ok) { showToast('已刪除', ''); loadAdminAnnouncements(); }
+}
+
+// ═══════════════════════════════════════════════
+// SCORES (Admin)
+// ═══════════════════════════════════════════════
+async function postScore() {
   const a = document.getElementById('score-team-a').value.trim();
   const b = document.getElementById('score-team-b').value.trim();
   const sa = parseInt(document.getElementById('score-a').value) || 0;
   const sb = parseInt(document.getElementById('score-b').value) || 0;
   const note = document.getElementById('score-note').value.trim();
-
   if (!a || !b) { showToast('請輸入兩隊隊名', 'error'); return; }
-
-  const item = { a, b, sa, sb, note, time: new Date().toLocaleString('zh-TW', { month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' }) };
-  scores.unshift(item);
-  localStorage.setItem('scores', JSON.stringify(scores));
-
-  // Update standings
-  updateStandingsFromScore(a, b, sa, sb);
-
-  document.getElementById('score-a').value = '';
-  document.getElementById('score-b').value = '';
-  renderResultsPage();
-  showToast(`✅ 比分登錄：${a} ${sa} - ${sb} ${b}`, 'success');
-}
-
-function updateStandingsFromScore(a, b, sa, sb) {
-  let ta = standings.find(t => t.name === a);
-  let tb = standings.find(t => t.name === b);
-  if (!ta) { ta = { name: a, p:0, w:0, d:0, l:0, pts:0, gf:0, ga:0 }; standings.push(ta); }
-  if (!tb) { tb = { name: b, p:0, w:0, d:0, l:0, pts:0, gf:0, ga:0 }; standings.push(tb); }
-
-  ta.p++; tb.p++;
-  ta.gf += sa; ta.ga += sb;
-  tb.gf += sb; tb.ga += sa;
-
-  if (sa > sb) { ta.w++; ta.pts += 2; tb.l++; }
-  else if (sb > sa) { tb.w++; tb.pts += 2; ta.l++; }
-  else { ta.d++; ta.pts++; tb.d++; tb.pts++; }
-
-  standings.sort((x, y) => y.pts - x.pts || (y.gf - y.ga) - (x.gf - x.ga));
-  localStorage.setItem('standings', JSON.stringify(standings));
-  renderStandingsManager();
-}
-
-function addTeamToStandings() {
-  const name = document.getElementById('new-team-name').value.trim();
-  if (!name) return;
-  if (standings.find(t => t.name === name)) { showToast('隊伍已存在', 'error'); return; }
-  standings.push({ name, p:0, w:0, d:0, l:0, pts:0, gf:0, ga:0 });
-  localStorage.setItem('standings', JSON.stringify(standings));
-  document.getElementById('new-team-name').value = '';
-  renderStandingsManager();
-  renderResultsPage();
-  showToast(`✅ 已新增隊伍：${name}`, 'success');
-}
-
-function removeTeam(name) {
-  standings = standings.filter(t => t.name !== name);
-  localStorage.setItem('standings', JSON.stringify(standings));
-  renderStandingsManager();
-  renderResultsPage();
-  showToast(`已移除：${name}`);
-}
-
-function renderStandingsManager() {
-  const el = document.getElementById('standings-manage');
-  if (!el) return;
-  if (!standings.length) { el.innerHTML = '<div style="color:var(--muted);font-size:0.85rem">尚未新增隊伍</div>'; return; }
-  el.innerHTML = standings.map((t,i) => `
-    <div style="display:flex;align-items:center;gap:0.8rem;padding:0.5rem 0;border-bottom:1px solid var(--border)">
-      <span style="width:20px;text-align:center;color:var(--muted);font-size:0.8rem">${i+1}</span>
-      <span style="flex:1">${t.name}</span>
-      <span style="color:var(--accent);font-size:0.85rem">積分${t.pts} ｜ ${t.w}勝${t.d}和${t.l}敗</span>
-      <button onclick="removeTeam('${t.name}')" style="background:none;border:none;color:#ef5350;cursor:pointer;font-size:0.9rem">✕</button>
-    </div>
-  `).join('');
-}
-
-// ── RESULTS PAGE ──
-function renderResultsPage() {
-  // Announcements
-  const annEl = document.getElementById('announcements-list');
-  if (annEl) {
-    const all = [...announcements]; // admin-posted ones
-    if (all.length > 0) {
-      annEl.innerHTML = all.map(a => `
-        <div class="announcement-item">
-          <div>
-            <div class="announcement-meta">${a.time}</div>
-            <div class="announcement-text">${a.text}</div>
-          </div>
-          <span class="announcement-type type-${a.type}">${a.type === 'result' ? '結果' : a.type === 'alert' ? '緊急' : '公告'}</span>
-        </div>
-      `).join('') + annEl.innerHTML.slice(annEl.innerHTML.indexOf('<div class="announcement-item">'));
-    }
+  const res = await gasCall('addScore', { data: { a, b, sa, sb, note, time: new Date().toLocaleString('zh-TW',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}) } });
+  if (res.ok) {
+    document.getElementById('score-a').value = '';
+    document.getElementById('score-b').value = '';
+    // Auto-recalc standings
+    await gasCall('recalcStandings');
+    showToast(`✅ 比分登錄：${a} ${sa} - ${sb} ${b}`, 'success');
+    loadAdminScores();
+    renderStandingsManager();
   }
+}
 
-  // Scores
-  const scEl = document.getElementById('scores-list');
-  if (scEl && scores.length > 0) {
-    scEl.innerHTML = scores.map(s => `
-      <div class="card" style="display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;margin-bottom:1rem;padding:1.2rem 1.5rem">
-        <div style="text-align:right">
-          <div style="font-weight:700;font-size:1rem">${s.a}</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:${s.sa > s.sb ? 'var(--gold)' : 'var(--muted)'}">${s.sa}</div>
-        </div>
-        <div style="text-align:center">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--accent)">VS</div>
-          <div style="font-size:0.72rem;color:var(--muted)">${s.note || ''}</div>
-          <div style="font-size:0.7rem;color:var(--muted)">${s.time}</div>
-        </div>
-        <div style="text-align:left">
-          <div style="font-weight:700;font-size:1rem">${s.b}</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:${s.sb > s.sa ? 'var(--gold)' : 'var(--muted)'}">${s.sb}</div>
+async function loadAdminScores() {
+  const res = await gasCall('getPublicData');
+  if (!res.ok) return;
+  const el = document.getElementById('admin-scores-list');
+  if (!res.scores || !res.scores.length) { el.innerHTML = '<div style="color:var(--muted);font-size:0.85rem">尚無比分記錄</div>'; return; }
+  el.innerHTML = res.scores.map(s => `
+    <div class="score-card" style="margin-bottom:0.8rem">
+      <div style="text-align:right"><div style="font-weight:700">${s.a}</div><div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:${s.sa>s.sb?'var(--gold)':'var(--muted)'}">${s.sa}</div></div>
+      <div style="text-align:center"><div style="font-family:'Bebas Neue',sans-serif;color:var(--accent)">VS</div><div style="font-size:0.72rem;color:var(--muted)">${s.note||''}</div><div style="font-size:0.7rem;color:var(--muted)">${s.time||''}</div>
+        <div style="margin-top:0.5rem;display:flex;gap:0.5rem;justify-content:center">
+          <button class="btn btn-outline btn-sm" onclick="openEditScore(${s.id},'${s.a}','${s.b}',${s.sa},${s.sb},'${s.note||''}')">✏️</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteScore(${s.id})">🗑️</button>
         </div>
       </div>
-    `).join('');
-  }
+      <div style="text-align:left"><div style="font-weight:700">${s.b}</div><div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:${s.sb>s.sa?'var(--gold)':'var(--muted)'}">${s.sb}</div></div>
+    </div>`).join('');
+}
 
-  // Standings
-  const stEl = document.getElementById('standings-tbody');
-  if (stEl && standings.length > 0) {
-    stEl.innerHTML = standings.map((t, i) => {
-      const classes = ['rank-1','rank-2','rank-3','rank-other'];
-      const cls = i < 3 ? classes[i] : classes[3];
-      return `
-        <tr>
-          <td><span class="rank-badge ${cls}">${i+1}</span></td>
-          <td style="font-weight:600">${t.name}</td>
-          <td>${t.p}</td>
-          <td>${t.w}</td>
-          <td>${t.d}</td>
-          <td>${t.l}</td>
-          <td style="color:var(--accent);font-weight:700">${t.pts}</td>
-          <td>${t.gf}</td>
-          <td>${t.ga}</td>
-          <td style="color:${t.gf-t.ga >= 0 ? '#81c784' : '#ef9a9a'}">${t.gf > 0 || t.ga > 0 ? (t.gf-t.ga > 0 ? '+' : '') + (t.gf-t.ga) : '-'}</td>
-          <td><span class="status-pill ${t.p > 0 ? 'pill-live' : 'pill-pending'}">${t.p > 0 ? '進行中' : '待賽'}</span></td>
-        </tr>
-      `;
-    }).join('');
+function openEditScore(id, a, b, sa, sb, note) {
+  document.getElementById('edit-score-id').value = id;
+  document.getElementById('edit-score-team-a').value = a;
+  document.getElementById('edit-score-team-b').value = b;
+  document.getElementById('edit-score-a').value = sa;
+  document.getElementById('edit-score-b').value = sb;
+  document.getElementById('edit-score-note').value = note;
+  document.getElementById('edit-score-modal').classList.remove('hidden');
+}
+
+async function saveEditScore() {
+  const id = document.getElementById('edit-score-id').value;
+  const data = {
+    a: document.getElementById('edit-score-team-a').value,
+    b: document.getElementById('edit-score-team-b').value,
+    sa: parseInt(document.getElementById('edit-score-a').value) || 0,
+    sb: parseInt(document.getElementById('edit-score-b').value) || 0,
+    note: document.getElementById('edit-score-note').value
+  };
+  const res = await gasCall('updateScore', { id, data });
+  if (res.ok) {
+    await gasCall('recalcStandings');
+    showToast('✅ 比分已更新', 'success');
+    closeModal('edit-score-modal');
+    loadAdminScores();
+    renderStandingsManager();
   }
 }
 
-// ── TOAST ──
+async function deleteScore(id) {
+  if (!confirm('確定刪除此比分記錄？積分榜將重新計算')) return;
+  const res = await gasCall('deleteScore', { id });
+  if (res.ok) {
+    await gasCall('recalcStandings');
+    showToast('已刪除', '');
+    loadAdminScores();
+    renderStandingsManager();
+  }
+}
+
+// ═══════════════════════════════════════════════
+// STANDINGS (Admin)
+// ═══════════════════════════════════════════════
+async function addTeamToStandings() {
+  const name = document.getElementById('new-team-name').value.trim();
+  if (!name) return;
+  const res = await gasCall('addTeam', { name });
+  if (res.ok) { document.getElementById('new-team-name').value = ''; showToast(`✅ 已新增：${name}`, 'success'); renderStandingsManager(); }
+  else showToast(res.error || '新增失敗', 'error');
+}
+
+async function removeTeam(name) {
+  if (!confirm(`確定移除隊伍「${name}」？`)) return;
+  const res = await gasCall('removeTeam', { name });
+  if (res.ok) { showToast(`已移除：${name}`, ''); renderStandingsManager(); }
+}
+
+async function renderStandingsManager() {
+  const res = await gasCall('getPublicData');
+  if (!res.ok) return;
+  const el = document.getElementById('standings-manage');
+  if (!el) return;
+  if (!res.standings || !res.standings.length) { el.innerHTML = '<div style="color:var(--muted);font-size:0.85rem">尚未新增隊伍</div>'; return; }
+  el.innerHTML = '<div class="players-table-wrapper"><table class="standings-table"><thead><tr><th>排名</th><th>隊名</th><th>賽</th><th>勝</th><th>和</th><th>敗</th><th>積分</th><th>得分</th><th>失分</th><th>操作</th></tr></thead><tbody>' +
+    res.standings.map((t,i) => `
+      <tr>
+        <td><span class="rank-badge ${i<3?['rank-1','rank-2','rank-3'][i]:'rank-other'}">${i+1}</span></td>
+        <td style="font-weight:600">${t.name}</td>
+        <td>${t.p}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td>
+        <td style="color:var(--accent);font-weight:700">${t.pts}</td>
+        <td>${t.gf}</td><td>${t.ga}</td>
+        <td><button onclick="removeTeam('${t.name}')" class="btn btn-danger btn-sm">移除</button></td>
+      </tr>`).join('') + '</tbody></table></div>';
+}
+
+// ═══════════════════════════════════════════════
+// REGISTRATIONS (Admin)
+// ═══════════════════════════════════════════════
+async function loadRegistrations() {
+  const el = document.getElementById('reg-list');
+  el.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--muted)"><span class="loading-spinner"></span> 載入中...</div>';
+  const res = await gasCall('getRegistrations');
+  if (!res.ok) { el.innerHTML = '<div style="color:#ef9a9a">載入失敗，請確認後端設定</div>'; return; }
+  const regs = res.registrations || [];
+  document.getElementById('reg-count').textContent = regs.length;
+  if (!regs.length) { el.innerHTML = '<div style="color:var(--muted)">尚無報名資料</div>'; return; }
+  el.innerHTML = '<div class="players-table-wrapper"><table class="reg-table"><thead><tr><th>序號</th><th>報名時間</th><th>隊名</th><th>服務單位</th><th>領隊</th><th>聯絡人</th><th>電話</th><th>人數</th><th>操作</th></tr></thead><tbody>' +
+    regs.map((r,i) => `<tr>
+      <td style="color:var(--muted)">REG-${r.id||i+1}</td>
+      <td style="font-size:0.8rem;color:var(--muted)">${r.submittedAt||''}</td>
+      <td style="font-weight:700">${r.teamName||''}</td>
+      <td>${r.org||''}</td>
+      <td>${r.leader||''}</td>
+      <td>${r.contact||''}</td>
+      <td>${r.phone||''}</td>
+      <td>${(r.players||[]).length}人</td>
+      <td><button onclick="viewRegistration(${i})" class="btn btn-outline btn-sm">詳情</button></td>
+    </tr>`).join('') + '</tbody></table></div>';
+  // Store for modal
+  window._regs = regs;
+}
+
+function viewRegistration(idx) {
+  const r = window._regs[idx];
+  if (!r) return;
+  const el = document.getElementById('view-reg-content');
+  el.innerHTML = `
+    <div class="card-grid" style="margin-bottom:1rem">
+      <div><div class="info-label">隊名</div><div class="info-value">${r.teamName}</div></div>
+      <div><div class="info-label">服務單位</div><div class="info-value">${r.org||'—'}</div></div>
+      <div><div class="info-label">領隊</div><div class="info-value">${r.leader||'—'}</div></div>
+      <div><div class="info-label">教練</div><div class="info-value">${r.coach||'—'}</div></div>
+      <div><div class="info-label">聯絡人</div><div class="info-value">${r.contact||'—'}</div></div>
+      <div><div class="info-label">電話/Email</div><div class="info-value">${r.phone||'—'} / ${r.email||'—'}</div></div>
+    </div>
+    <div class="players-table-wrapper">
+      <table class="players-table">
+        <thead><tr><th>#</th><th>姓名</th><th>類別</th><th>生日</th><th>身分證後4碼</th><th>手機</th><th>素食</th></tr></thead>
+        <tbody>${(r.players||[]).map((p,i) => `<tr>
+          <td class="row-num">${i+1}</td>
+          <td>${p.name||''}</td><td>${p.type||''}</td><td>${p.bday||''}</td>
+          <td>${p.id4||''}</td><td>${p.phone||''}</td>
+          <td class="checkbox-cell">${p.veg?'✓':''}</td>
+        </tr>`).join('')}</tbody>
+      </table>
+    </div>`;
+  document.getElementById('view-reg-modal').classList.remove('hidden');
+}
+
+// ═══════════════════════════════════════════════
+// USER MANAGEMENT (Superadmin)
+// ═══════════════════════════════════════════════
+async function loadUsers() {
+  const res = await gasCall('getUsers');
+  if (!res.ok) return;
+  const el = document.getElementById('users-list');
+  el.innerHTML = res.users.map(u => `
+    <div class="user-row">
+      <div class="user-avatar">${u.displayName?.[0]||u.username[0]}</div>
+      <div style="flex:1">
+        <div style="font-weight:600">${u.displayName||u.username}</div>
+        <div style="font-size:0.78rem;color:var(--muted)">帳號：${u.username}</div>
+      </div>
+      <span class="user-role-badge ${u.role==='superadmin'?'role-superadmin':'role-admin'}">${u.role==='superadmin'?'超級管理員':'管理員'}</span>
+      ${u.username !== 'admin' ? `<button onclick="deleteUser('${u.username}')" class="btn btn-danger btn-sm">刪除</button>` : '<span style="font-size:0.75rem;color:var(--muted)">（預設）</span>'}
+    </div>`).join('');
+}
+
+async function createAdminUser() {
+  const username = document.getElementById('new-admin-user').value.trim();
+  const password = document.getElementById('new-admin-pw').value;
+  const displayName = document.getElementById('new-admin-display').value.trim() || username;
+  const role = document.getElementById('new-admin-role').value;
+  if (!username || !password) { showToast('請填寫帳號和密碼', 'error'); return; }
+  if (password.length < 6) { showToast('密碼至少需要6個字元', 'error'); return; }
+  if (!/^[a-zA-Z0-9_]+$/.test(username)) { showToast('帳號只能使用英文、數字及底線', 'error'); return; }
+  const res = await gasCall('addUser', { username, password, displayName, role });
+  if (res.ok) {
+    document.getElementById('new-admin-user').value = '';
+    document.getElementById('new-admin-pw').value = '';
+    document.getElementById('new-admin-display').value = '';
+    showToast(`✅ 帳號「${username}」已建立`, 'success');
+    loadUsers();
+  } else showToast(res.error || '建立失敗', 'error');
+}
+
+async function deleteUser(username) {
+  if (!confirm(`確定刪除帳號「${username}」？`)) return;
+  const res = await gasCall('deleteUser', { username });
+  if (res.ok) { showToast(`已刪除帳號：${username}`, ''); loadUsers(); }
+  else showToast(res.error || '刪除失敗', 'error');
+}
+
+// ═══════════════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════════════
+function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+document.querySelectorAll('.modal-overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) o.classList.add('hidden'); }));
+
+// ═══════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════
 function showToast(msg, type = '') {
-  const container = document.getElementById('toast-container');
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.textContent = msg;
-  container.appendChild(toast);
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.3s';
-    setTimeout(() => toast.remove(), 300);
-  }, 3000);
+  const c = document.getElementById('toast-container');
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.textContent = msg;
+  c.appendChild(t);
+  setTimeout(() => { t.style.opacity='0'; t.style.transition='opacity 0.3s'; setTimeout(()=>t.remove(),300); }, 3500);
 }
 
-// ── INIT ──
+// ═══════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  // Pre-populate with 3 default player rows
-  addPlayerRow();
-  addPlayerRow();
-  addPlayerRow();
-  renderResultsPage();
+  // Restore GAS URL if saved
+  if (localStorage.getItem(GAS_KEY)) { GAS_URL = localStorage.getItem(GAS_KEY); }
 
-  // Smooth scroll nav behavior
+  // Default 3 player rows
+  addPlayerRow(); addPlayerRow(); addPlayerRow();
+
+  // Load public data on start
+  loadPublicData();
+
+  // Nav scroll shadow
   window.addEventListener('scroll', () => {
-    const nav = document.getElementById('main-nav');
-    if (window.scrollY > window.innerHeight - 100) {
-      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.5)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
+    document.getElementById('main-nav').style.boxShadow = window.scrollY > window.innerHeight - 100 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none';
   });
+
+  // Auto-refresh public data every 60 seconds
+  setInterval(loadPublicData, 60000);
 });
 </script>
 </body>
